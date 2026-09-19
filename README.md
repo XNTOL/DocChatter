@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/de232d1e-e52b-4670-88f2-36880828be1b
+
 # IQA-RAG: Retrieval-Augmented Generation for Image Quality Assessment Literature
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
