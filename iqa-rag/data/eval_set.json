@@ -1,0 +1,227 @@
+[
+  {
+    "id": "iqa-q01",
+    "question": "What is the primary difference between Full-Reference (FR), Reduced-Reference (RR), and No-Reference (NR) Image Quality Assessment?",
+    "ground_truth_answer": "Full-Reference (FR) IQA evaluates distorted images by comparing them directly against a pristine reference image. Reduced-Reference (RR) IQA has access only to partial feature descriptions or statistical summaries of the reference image. No-Reference (NR or blind) IQA predicts visual quality directly from the distorted image without any access to the original reference.",
+    "target_paper": "Comprehensive Survey on Image Quality Assessment",
+    "target_section": "Introduction & Taxonomy",
+    "keywords": ["Full-Reference", "Reduced-Reference", "No-Reference", "reference image", "blind"],
+    "category": "Taxonomy"
+  },
+  {
+    "id": "iqa-q02",
+    "question": "How does BRISQUE (Blind/Referenceless Image Spatial Quality Evaluator) compute quality features in the spatial domain?",
+    "ground_truth_answer": "BRISQUE calculates Mean Subtracted Contrast Normalized (MSCN) coefficients across the image, fits an asymmetric generalized Gaussian distribution (AGGD) to MSCN coefficients and pairwise adjacent products, and uses the fitted distribution parameters as features for a support vector regressor (SVR).",
+    "target_paper": "No-Reference Image Quality Assessment in the Spatial Domain (BRISQUE)",
+    "target_section": "Natural Scene Statistics Model",
+    "keywords": ["BRISQUE", "MSCN", "Mean Subtracted Contrast Normalized", "AGGD", "SVR", "Spatial Domain"],
+    "category": "NR-IQA"
+  },
+  {
+    "id": "iqa-q03",
+    "question": "What key hypothesis does LPIPS (Learned Perceptual Image Patch Similarity) investigate regarding deep neural network representations?",
+    "ground_truth_answer": "LPIPS investigates the hypothesis that feature representations learned by deep neural networks trained on high-level visual tasks (such as ImageNet classification via VGG, AlexNet, or SqueezeNet) act as an emergent perceptual distance metric that correlates well with human perceptual judgments, even across diverse architectures and without explicit supervision for perceptual similarity.",
+    "target_paper": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric (LPIPS)",
+    "target_section": "Introduction & Deep Feature Distance",
+    "keywords": ["LPIPS", "deep features", "perceptual metric", "VGG", "AlexNet", "perceptual similarity"],
+    "category": "FR-IQA"
+  },
+  {
+    "id": "iqa-q04",
+    "question": "How does CLIP-IQA adapt the CLIP vision-language model for zero-shot image quality assessment?",
+    "ground_truth_answer": "CLIP-IQA utilizes paired antonym text prompts describing quality attributes (such as 'Good image' vs 'Bad image', or 'Sharp image' vs 'Blurry image'), passes them through the CLIP text encoder, and calculates cosine similarity with image patch embeddings from the vision encoder, computing quality via softmax probabilities.",
+    "target_paper": "Exploring CLIP for Solving Open-world Image Quality Assessment (CLIP-IQA)",
+    "target_section": "Methodology: Visual Prompting and Antonym Pairs",
+    "keywords": ["CLIP-IQA", "antonym prompts", "Good image", "Bad image", "cosine similarity", "zero-shot"],
+    "category": "NR-IQA"
+  },
+  {
+    "id": "iqa-q05",
+    "question": "What architectural challenge in IQA does MUSIQ (Multi-scale Image Quality Transformer) solve regarding image resolution?",
+    "ground_truth_answer": "Standard deep networks resize or crop images to fixed small resolutions (e.g., 224x224), which destroys high-frequency details, sharpness, and composition artifacts. MUSIQ accommodates full-resolution images at arbitrary aspect ratios by sampling patches at multiple scales and processing multi-scale patch representations using a Transformer encoder with positional embeddings.",
+    "target_paper": "MUSIQ: Multi-scale Image Quality Transformer",
+    "target_section": "Multi-Scale Tokenization & Architecture",
+    "keywords": ["MUSIQ", "Multi-scale", "aspect ratio", "patch sampling", "Transformer encoder", "resolution"],
+    "category": "Deep-IQA"
+  },
+  {
+    "id": "iqa-q06",
+    "question": "What are the three structural comparison components evaluated in the SSIM (Structural Similarity Index) metric?",
+    "ground_truth_answer": "SSIM measures image quality based on three separate components: Luminance comparison l(x,y), Contrast comparison c(x,y), and Structural correlation s(x,y), combined multiplicatively.",
+    "target_paper": "Image Quality Assessment: From Error Visibility to Structural Similarity (SSIM)",
+    "target_section": "Structural Similarity Index",
+    "keywords": ["SSIM", "luminance", "contrast", "structural correlation", "mean", "variance", "covariance"],
+    "category": "FR-IQA"
+  },
+  {
+    "id": "iqa-q07",
+    "question": "Why is Mean Squared Error (MSE) / PSNR often criticized as a poor metric for human perceptual image quality?",
+    "ground_truth_answer": "MSE and PSNR compute pixel-wise differences independently without considering human visual system (HVS) characteristics such as spatial frequency sensitivity, contrast masking, structural coherence, or perceptual geometry. Two images with identical MSE can have drastically different perceived visual fidelity depending on whether the distortion is high-frequency noise, a constant luminance shift, or blur.",
+    "target_paper": "Image Quality Assessment: From Error Visibility to Structural Similarity (SSIM)",
+    "target_section": "Limitations of MSE and Error Visibility",
+    "keywords": ["MSE", "PSNR", "pixel-wise", "human visual system", "HVS", "perceptual quality"],
+    "category": "Foundations"
+  },
+  {
+    "id": "iqa-q08",
+    "question": "How does NIQE (Natural Image Quality Evaluator) differ from BRISQUE in its training methodology?",
+    "ground_truth_answer": "While BRISQUE is trained using a supervised regression model on both pristine and distorted images with human Mean Opinion Scores (MOS), NIQE is completely unsupervised, constructed solely using a multivariate Gaussian (MVG) model of natural pristine images. Distorted images are scored by computing the distance (Bhattacharyya or Mahalanobis) between their spatial NSS features and the pristine MVG model.",
+    "target_paper": "Making a 'Completely Blind' Image Quality Analyzer (NIQE)",
+    "target_section": "Pristine MVG Model and Distance Metric",
+    "keywords": ["NIQE", "unsupervised", "completely blind", "multivariate Gaussian", "MVG", "pristine images"],
+    "category": "NR-IQA"
+  },
+  {
+    "id": "iqa-q09",
+    "question": "What is the core formulation of TOPIQ (Task-Oriented Perceptual Image Quality)?",
+    "ground_truth_answer": "TOPIQ applies top-down and bottom-up attention mechanisms using a vision Transformer, extracting both semantic task-level features and low-level distortion tokens to jointly assess perceptual distortion and semantic contextual degradation.",
+    "target_paper": "TOPIQ: A Top-Down Approach to Image Quality Assessment",
+    "target_section": "Top-Down Formulation",
+    "keywords": ["TOPIQ", "top-down", "bottom-up", "semantic features", "low-level distortion"],
+    "category": "Deep-IQA"
+  },
+  {
+    "id": "iqa-q10",
+    "question": "What statistical evaluation criteria are standardly used to benchmark IQA metrics against subjective Mean Opinion Scores (MOS)?",
+    "ground_truth_answer": "The primary criteria are Spearman's Rank Order Correlation Coefficient (SRCC) and Kendall's Rank Correlation Coefficient (KRCC) to measure prediction monotonicity, and Pearson Linear Correlation Coefficient (PLCC) and Root Mean Squared Error (RMSE) after non-linear logistic regression mapping to evaluate prediction accuracy.",
+    "target_paper": "Standardized Evaluation of IQA Algorithms",
+    "target_section": "Performance Evaluation Criteria",
+    "keywords": ["SRCC", "PLCC", "KRCC", "RMSE", "MOS", "monotonicity", "accuracy"],
+    "category": "Evaluation-Metrics"
+  },
+  {
+    "id": "iqa-q11",
+    "question": "What is the key mechanism of DISTS (Deep Image Structure and Texture Similarity)?",
+    "ground_truth_answer": "DISTS evaluates both structural similarity and texture similarity using intermediate feature maps from a deep convolutional neural network (VGG-16), calculating separate correlation coefficients for spatial structure and feature channel statistics to remain sensitive to structural degradation while tolerant to imperceptible texture variations.",
+    "target_paper": "Image Quality Assessment: Unifying Structure and Texture Similarity (DISTS)",
+    "target_section": "DISTS Formulation",
+    "keywords": ["DISTS", "structure similarity", "texture similarity", "VGG-16", "feature channel statistics"],
+    "category": "FR-IQA"
+  },
+  {
+    "id": "iqa-q12",
+    "question": "How does HyperIQA handle content-dependent quality assessment across diverse image categories?",
+    "ground_truth_answer": "HyperIQA uses a hypernetwork architecture split into a perception rule generator and a quality prediction network. The rule generator analyzes high-level semantic content to dynamically generate the adaptive weights for the lower-level quality prediction network.",
+    "target_paper": "Blindly Assess Image Quality in the Wild Guided by a Self-Adaptive Hyper Network (HyperIQA)",
+    "target_section": "Hypernetwork Architecture",
+    "keywords": ["HyperIQA", "hypernetwork", "content-dependent", "self-adaptive", "rule generator", "quality prediction"],
+    "category": "NR-IQA"
+  },
+  {
+    "id": "iqa-q13",
+    "question": "What distinguishing characteristics differentiate synthetic distortion datasets (e.g. TID2013, KADID-10k) from authentic 'in-the-wild' datasets (e.g. KonIQ-10k, SPAQ)?",
+    "ground_truth_answer": "Synthetic distortion datasets artificially apply uniform synthetic distortions (such as simulated additive Gaussian noise, JPEG compression, or Gaussian blur) at controlled severity levels to clean pristine images. Authentic in-the-wild datasets collect real photographs captured by consumers containing complex, compound, heterogeneous distortions like camera sensor noise, poor lighting, hand-shake blur, and compression.",
+    "target_paper": "KonIQ-10k: An Ecologically Valid Database for Deep Learning of Blind Image Quality Assessment",
+    "target_section": "Synthetic vs Authentic Distortions",
+    "keywords": ["synthetic distortion", "authentic", "in-the-wild", "TID2013", "KADID-10k", "KonIQ-10k", "SPAQ"],
+    "category": "Benchmarks"
+  },
+  {
+    "id": "iqa-q14",
+    "question": "How does Multi-Scale SSIM (MS-SSIM) improve upon the single-scale SSIM algorithm?",
+    "ground_truth_answer": "MS-SSIM iteratively downsamples the reference and distorted images through a low-pass filtering and decimation pyramid, computing contrast and structure comparisons at multiple scales while calculating luminance comparison only at the coarsest scale, weighting each scale according to human visual sensitivity at varying viewing distances.",
+    "target_paper": "Multi-Scale Structural Similarity for Image Quality Assessment",
+    "target_section": "Multi-Scale Synthesis",
+    "keywords": ["MS-SSIM", "Multi-Scale", "pyramid", "viewing distance", "downsampling", "coarsest scale"],
+    "category": "FR-IQA"
+  },
+  {
+    "id": "iqa-q15",
+    "question": "What is the Information Fidelity Criterion (IFC) and Visual Information Fidelity (VIF) concept in IQA?",
+    "ground_truth_answer": "VIF models natural scenes in the wavelet domain using Gaussian Scale Mixtures (GSM) and models the human visual system distortion as an additive Gaussian noise channel. It quantifies quality as the ratio of mutual information extracted from the distorted image by the visual brain to the mutual information extracted from the reference image.",
+    "target_paper": "Image Information and Visual Quality (VIF)",
+    "target_section": "Information Theoretic Framework",
+    "keywords": ["VIF", "Visual Information Fidelity", "Gaussian Scale Mixtures", "GSM", "mutual information", "HVS channel"],
+    "category": "FR-IQA"
+  },
+  {
+    "id": "iqa-q16",
+    "question": "What is FSIM (Feature Similarity Index) and what two low-level features does it rely on?",
+    "ground_truth_answer": "FSIM computes image similarity based on two primary human visual system features: Phase Congruency (PC), which captures salient invariant edge and feature structures without illumination sensitivity, and Image Gradient Magnitude (GM), which reflects luminance contrast intensity.",
+    "target_paper": "FSIM: A Feature Similarity Index for Image Quality Assessment",
+    "target_section": "Phase Congruency and Gradient Magnitude",
+    "keywords": ["FSIM", "Phase Congruency", "Gradient Magnitude", "PC", "GM", "contrast"],
+    "category": "FR-IQA"
+  },
+  {
+    "id": "iqa-q17",
+    "question": "How does PIQE (Perception based Image Quality Evaluator) perform blind quality estimation without model training?",
+    "ground_truth_answer": "PIQE partitions an image into non-overlapping 16x16 blocks, computes MSCN coefficients for each block, classifies blocks as perceptually distorted or high-spatial-activity based on local variance and block activity thresholds, and pools distortion scores exclusively across distorted blocks without needing any trained regression model.",
+    "target_paper": "Perception based Image Quality Evaluator (PIQE)",
+    "target_section": "Block Classification and Quality Pooling",
+    "keywords": ["PIQE", "block partition", "perceptually distorted", "MSCN", "training-free", "unsupervised"],
+    "category": "NR-IQA"
+  },
+  {
+    "id": "iqa-q18",
+    "question": "What is the role of the logistic function in 5-parameter non-linear regression before calculating PLCC in IQA evaluations?",
+    "ground_truth_answer": "Subjective Mean Opinion Scores (MOS) and objective algorithmic quality scores often exhibit a non-linear relationship due to human visual saturation and scale boundaries. A monotonic 5-parameter logistic curve maps objective scores to subjective ratings to linearize the predictions before calculating PLCC and RMSE.",
+    "target_paper": "Video Quality Experts Group (VQEG) Test Plan",
+    "target_section": "Nonlinear Mapping Function",
+    "keywords": ["5-parameter logistic", "non-linear regression", "PLCC", "saturation", "linearize", "MOS"],
+    "category": "Evaluation-Metrics"
+  },
+  {
+    "id": "iqa-q19",
+    "question": "What is PieAPP (Perceptual Image-Error Assessment through Pairwise Preference)?",
+    "ground_truth_answer": "PieAPP is a deep learning-based FR-IQA metric trained on pairwise human preference comparisons rather than absolute MOS scores. It predicts the probability that a human observer would perceive one distorted image patch as being closer to the reference image than another distorted patch.",
+    "target_paper": "PieAPP: Perceptual Image-Error Assessment through Pairwise Preference",
+    "target_section": "Pairwise Preference Formulation",
+    "keywords": ["PieAPP", "pairwise preference", "probability", "patch comparison", "reference patch"],
+    "category": "FR-IQA"
+  },
+  {
+    "id": "iqa-q20",
+    "question": "How do Generative AI (text-to-image) models introduce unique challenges for traditional IQA metrics?",
+    "ground_truth_answer": "AI-generated images (from diffusion models or GANs) frequently lack natural pristine references (necessitating NR-IQA), may have high spatial sharpness and realistic local texture yet suffer from severe unnatural semantic distortions (e.g. anatomical deformities, physically impossible lighting, or floating objects), and require evaluating prompt alignment alongside visual aesthetics.",
+    "target_paper": "AIGCIQA: Quality Assessment of AI Generated Content",
+    "target_section": "AIGC Quality Dimensions: Technical, Semantic, Aesthetic",
+    "keywords": ["AIGC", "diffusion models", "text-to-image", "semantic distortion", "prompt alignment", "aesthetics"],
+    "category": "AIGC-IQA"
+  },
+  {
+    "id": "iqa-q21",
+    "question": "What is the LIVE Image Quality Assessment Database and what significance does it hold in IQA history?",
+    "ground_truth_answer": "Developed by the Laboratory for Image and Video Engineering (LIVE) at UT Austin, the LIVE IQA database was the pioneering public benchmark dataset featuring 29 pristine images subject to 5 synthetic distortion categories (JPEG, JPEG2000, white noise, Gaussian blur, and simulated fast-fading Rayleigh channel) with subjective differential mean opinion scores (DMOS).",
+    "target_paper": "A Statistical Evaluation of Recent Full Reference Image Quality Assessment Algorithms (LIVE Database)",
+    "target_section": "Database Description and Calibration",
+    "keywords": ["LIVE database", "UT Austin", "DMOS", "JPEG", "JPEG2000", "Gaussian blur", "white noise"],
+    "category": "Benchmarks"
+  },
+  {
+    "id": "iqa-q22",
+    "question": "What is KADID-10k and how does its scale compare to earlier synthetic distortion datasets?",
+    "ground_truth_answer": "KADID-10k contains 10,125 distorted images derived from 81 pristine source images across 25 distortion types and 5 degradation levels, crowdsourced with over 30,400 subjective ratings, making it one of the largest synthetic IQA benchmarks compared to LIVE (982 images) and TID2013 (3,000 images).",
+    "target_paper": "KADID-10k: A Large-scale Artificially Deteriorated Image Quality Database",
+    "target_section": "Dataset Scale and Distribution",
+    "keywords": ["KADID-10k", "10,125 images", "25 distortion types", "crowdsourced", "TID2013", "LIVE"],
+    "category": "Benchmarks"
+  },
+  {
+    "id": "iqa-q23",
+    "question": "In LPIPS, what spatial pooling operation is performed on normalized feature differences?",
+    "ground_truth_answer": "In LPIPS, intermediate channel activations are unit-normalized across channel dimensions, scaled by learned layer weights w_l, and then spatially averaged across image height and width (L2 distance per pixel averaged over H x W) to yield the final scalar distance.",
+    "target_paper": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric (LPIPS)",
+    "target_section": "Network Architecture & Spatial Average",
+    "keywords": ["LPIPS", "unit-normalized", "layer weights", "spatial average", "L2 distance"],
+    "category": "FR-IQA"
+  },
+  {
+    "id": "iqa-q24",
+    "question": "What is the difference between Mean Opinion Score (MOS) and Differential Mean Opinion Score (DMOS)?",
+    "ground_truth_answer": "Mean Opinion Score (MOS) is the direct arithmetic average of subjective raw quality ratings given by human observers to an image. Differential Mean Opinion Score (DMOS) calculates the difference between an observer's rating of the reference image and their rating of the distorted image, compensating for individual subjective observer scoring biases and anchoring scales.",
+    "target_paper": "Methodology for the Subjective Assessment of the Quality of Television Pictures (ITU-R BT.500)",
+    "target_section": "MOS and DMOS Definitions",
+    "keywords": ["MOS", "DMOS", "subjective rating", "reference difference", "observer bias", "ITU-R"],
+    "category": "Evaluation-Metrics"
+  },
+  {
+    "id": "iqa-q25",
+    "question": "How does patch-based evaluation in CNN-based IQA models handle the conflict between local distortion and global composition?",
+    "ground_truth_answer": "Patch-based CNN models extract multiple local sub-patches from an image to capture fine-grained pixel distortions (noise, blur, compression), and employ learned attention pooling or regression aggregation to weight informative patches more heavily than homogeneous, low-information areas.",
+    "target_paper": "Convolutional Neural Networks for No-Reference Image Quality Assessment",
+    "target_section": "Patch Extraction and Aggregation",
+    "keywords": ["patch-based", "CNN", "attention pooling", "local distortion", "global composition"],
+    "category": "Deep-IQA"
+  }
+]

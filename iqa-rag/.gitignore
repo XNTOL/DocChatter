@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments & secrets
+.env
+.venv
+venv/
+
+# Vector database persistence
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+
+# Checkpoints
+.ipynb_checkpoints
+.pytest_cache/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

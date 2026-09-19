@@ -1,0 +1,1002 @@
+[
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c000",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Citation D. Temel and G. AlRegib, ”Boosting in image quality assessment,” 2016 IEEE 18th International\nWorkshop on Multimedia Signal Processing (MMSP), Montreal, QC, 2016, pp. 1-6. DOI https://doi.org/10.1109/MMSP.2016.7813335\nReview Date added to IEEE Xplore: 16 January 2017\nBib @INPROCEEDINGS{Temel2016 MMSP,\nauthor={D. Temel and G. AlRegib},\nbooktitle={2016 IEEE 18th International Workshop on Multimedia Signal Processing (MMSP) },\ntitle={Boosting in image quality assessment},\nyear={2016},\npages={1-6},\ndoi={10.1109/MMSP.2016.7813335},\nISSN={2473-3628},\nmonth={Sept},}\nCopyright c©2016 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for all\nother uses, in any current or future media, including reprinting/republishing this material for advertising\nor promotional purposes, creating new collective works, for resale or redistribution to servers or lists, or\nreuse of any copyrighted component of this work in other works.",
+    "token_count": 242,
+    "char_count": 968
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c001",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Contact alregib@gatech.edu https://ghassanalregib.com/\ndcantemel@gmail.com http://cantemel.com/\nBoosting in Image Quality Assessment\nDogancan Temel\nCenter for Signal and\nInformation Processing\nSchool of Electrical and\nComputer Engineering\nGeorgia Institute of Technology\nAtlanta, Georgia 30332–0250\nEmail: dcantemel@gmail.com\nGhassan AlRegib\nCenter for Signal and\nInformation Processing\nSchool of Electrical and\nComputer Engineering\nGeorgia Institute of Technology\nAtlanta, Georgia 30332–0250\nEmail: alregib@gatech.edu\nAbstract—In this paper, we analyze the effect of boosting in\nimage quality assessment through multi-method fusion. Existing\nmulti-method studies focus on proposing a single quality estimator. On the contrary, we investigate the generalizability of multimethod fusion as a framework. In addition to support vector\nmachines that are commonly used in the multi-method fusion, we\npropose using neural networks in the boosting. To span different\ntypes of image quality assessment algorithms, we use quality\nestimators based on ﬁdelity, perceptually-extended ﬁdelity, structural similarity, spectral similarity, color, and learning.",
+    "token_count": 286,
+    "char_count": 1145
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c002",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "In the\nexperiments, we perform k-fold cross validation using the LIVE,\nthe multiply distorted LIVE, and the TID 2013 databases and\nthe performance of image quality assessment algorithms are\nmeasured via accuracy-, linearity-, and ranking-based metrics. Based on the experiments, we show that boosting methods\ngenerally improve the performance of image quality assessment\nand the level of improvement depends on the type of the\nboosting algorithm. Our experimental results also indicate that\nboosting the worst performing quality estimator with two or more\nadditional methods leads to statistically signiﬁcant performance\nenhancements independent of the boosting technique and neural\nnetwork-based boosting outperforms support vector machinebased boosting when two or more methods are fused. I. I NTRODUCTION\nImages have dominated online media and social networks\nbecause of the advances in capturing, storage, streaming, and\ndisplay technologies. Everyday, on average, billions of images\nare shared online. To be able to share all these images within\na limited bandwidth, we need to design compact representations that not only satisfy bandwidth requirements but also\nmaintain perceived quality.",
+    "token_count": 298,
+    "char_count": 1195
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c003",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "To be able to share all these images within\na limited bandwidth, we need to design compact representations that not only satisfy bandwidth requirements but also\nmaintain perceived quality. The ever-increasing number of\nimages makes it impossible to assess the perceived quality\nof all publicly available images subjectively. Therefore, there\nis an imminent need to automatically assess the quality of\nexperience (QoE), whose deﬁnition depends on the application\nand in case of imaging applications, the core of QoE is image\nquality. In the research community, image quality assessment is\nmodeled by mapping images to subjective scores. Quality estimators are designed to process an image or images to provide\na quality score. Fidelity-based approaches measure pixel-wise\ndifferences and they can be extended with visual system-based\ncharacteristics to obtain a more perceptually correlated quality\nscore [1]–[3]. Instead of quantifying pixel-wise differences,\nmeasuring structural similarity is also commonly used in the\nliterature [4]–[6]. Even the majority of the quality estimators\nuse only grayscale images or intensity channels, color information is also used in the literature [7]–[9].",
+    "token_count": 297,
+    "char_count": 1191
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c004",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Even the majority of the quality estimators\nuse only grayscale images or intensity channels, color information is also used in the literature [7]–[9]. In addition to\nthese hand-crafted quality estimators, methods that are based\non modeling natural scene statistics and data-driven learning\nare also used in the literature [10]–[13]. The majority of the\nquality estimators refer to visual system characteristics but\nnone of them is a comprehensive model of the perception process. Existing image quality estimators differ from each other\nin various ways. However, all these methods fundamentally\nmap pixels to subjective scores. Moreover, even some of the\nmethods are less perceptually correlated than others, they can\nstill contain additional information that can not be provided\nby better performing methods. Therefore, multiple methods\ncan be fused to boost the overall performance. Boosting is\ninitially discussed in [14] and [15] to investigate whether it is\npossible to obtain strong learners from weak learners or not. In [16], the authors describe a method for converting a weak\nlearning algorithm into a strong one that obtains arbitrarily\nhigh accuracy.",
+    "token_count": 290,
+    "char_count": 1162
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c005",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "In [16], the authors describe a method for converting a weak\nlearning algorithm into a strong one that obtains arbitrarily\nhigh accuracy. Based on the boosting discussion, we can also convert image\nquality assessment algorithms with poor performance into\nhighly perceptually correlated quality estimators. In [17], the\nauthors analyze the performance of multiple methods and combine two methods linearly to obtain a hybrid quality estimator. Linear weights are selected by exploring a parameter space. The authors in [18] propose a regression-based approach that\nis used to fuse quality estimates of multiple methods nonlinearly. In addition to estimating a quality score directly,\nhand-crafted features are also used to classify distortion types\nand a regression approach is used in each distortion type\nseparately to learn the mapping function. In [19], the multimethod fusion is extended with a method selection algorithm\nto reduce the overall complexity.",
+    "token_count": 239,
+    "char_count": 958
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c006",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "In [19], the multimethod fusion is extended with a method selection algorithm\nto reduce the overall complexity. The authors in [20] follow\na regression-based approach to obtain two types of image\nquality estimators that are separately trained with features\nof existing quality estimators and hand-crafted features that\nmeasure degradations overlooked by the existing features. The\nscores of individual quality estimators are fused with a support\nvector regression stage along with a statistical testing-based\nselection mechanism. A similar parallel boosting approach\nbased on support vector regression is also used for stereoscopic\nimage quality assessment in [21]. Multi-method fusion approaches are promising if they are\nconsidered as a framework, which can lead to more comprehensive quality estimators as the boosting methods and\nthe fused image quality assessment algorithms improve. The\nframework should not be limited to some speciﬁc quality estimators, distortion types, or learning methods.",
+    "token_count": 249,
+    "char_count": 999
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c007",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "The\nframework should not be limited to some speciﬁc quality estimators, distortion types, or learning methods. To investigate\nthe generalizability of fusing quality estimators, we use 11\nimage quality assessment algorithms that can be grouped into\n5 different categories as ﬁdelity-based, perceptually-extended\nﬁdelity-based, structural similarity-based, color-based, and\nlearning-based. In addition to performing boosting with support vector machines, we also use neural networks. Fused\nmethods are trained and tested over three different databases\nthat include distortion types based on compression, image\nnoise, communication, blur, color, global, and local. Finally,\nperformances of fused methods on different databases are measured using linearity-, accuracy-, and ranking-based metrics. At ﬁrst, we investigate the performance of regressed versions\nof the existing methods and compare the performance with\nexisting methods. Then, we analyze the performance of multimethod fusion that uses all the quality estimators. Finally,\nperformance of boosted methods with respect to the number\nof fused methods are analyzed.",
+    "token_count": 280,
+    "char_count": 1120
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c008",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Then, we analyze the performance of multimethod fusion that uses all the quality estimators. Finally,\nperformance of boosted methods with respect to the number\nof fused methods are analyzed. To the best of our knowledge,\nthere are only a few studies that fuse multiple methods, which\nuse a single type of architecture for regression. In this work,\nin addition to commonly used support vector machines, we\npropose using neural networks in the multi-method fusion. In\nSection II, we describe the experimental setup, which includes\nbrief descriptions of used image quality estimators, boosting\nmethods, databases, data partitioning, number of experiments,\nand performance metrics. We discuss the experimental results\nin Section III and conclude our discussion in Section IV. II. E XPERIMENTAL SETUP\nA. Image Quality Estimators\n1) Fidelity-based: Fidelity attributes quantify the changes\nin a degraded image with respect to a reference image and they\nare commonly preferred in image and video coding standards\nfor rate-distortion optimization because of low computational\ncomplexity and ease of implementation.",
+    "token_count": 276,
+    "char_count": 1106
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c009",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "The intuitive method\nto measure the ﬁdelity of an image is to directly compare it\nwith its distortion-free image, if available. Mean square error\n(MSE) is a commonly used pixel-wise ﬁdelity method, which\nis calculated by obtaining the difference between images,\ntaking the square root of the difference, and calculating the\nmean value. MSE is scaled by the range of an image and\nmapped with a logarithmic function to obtain the peak signalto-noise ratio (PSNR), which is one of the quality estimators\nused in the boosting operations. 2) Perceptually Extended Fidelity-based: Image quality\nmetrics use the characteristics known about the visual system\nto make the perceptual quality assessment more accurate. The\nauthors in [1] extend PSNR by removing mean shift, stretching\ncontrast block-wise, and quantizing DCT coefﬁcients with\nthe compression table proposed by JPEG. These extensions\nare performed to make PSNR compatible with the human\nvisual system and the extended metric is named as PSNRHVS. Reduction by value of contrast masking is also added\nto the metric and the modiﬁed version is named as PSNRHVS-M [2].",
+    "token_count": 279,
+    "char_count": 1117
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c010",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Reduction by value of contrast masking is also added\nto the metric and the modiﬁed version is named as PSNRHVS-M [2]. These metrics are further extended by adding\ncontrast change and mean shifting sensitivity (PSNR-HA,\nPSNR-HMA) as explained in [3], both of which are used in\nthe boosting operations. 3) Structural Similarity-based: Structural similarity is commonly obtained by quantifying the similarity between mean\nsubtracted and divisive normalized images. The authors in\n[4] propose a full reference metric (SSIM) based on the\ncomparison between a reference and a distorted image in\nterms of luminance, contrast, and structure in the spatial\ndomain. These structure-based methods are also extended\nto multi-scale (MS-SSIM) [4], complex domain (CW-SSIM)\n[5], and information-weighted (IW-SSIM) [6] versions. All of\nthese structural similarity methods are used in the boosting\noperations. Moreover, we also use spectral similarity in the\nboosting [22]. 4) Color-based: The human visual system (HVS) is more\nsensitive to changes in intensity compared to color [23]. Although color may not be as informative as intensity, it can\nstill contain additional information.",
+    "token_count": 292,
+    "char_count": 1168
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c011",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Although color may not be as informative as intensity, it can\nstill contain additional information. An intuitive way to use\ncolor information in the image quality assessment is pixel-wise\nﬁdelity. FSIMc [8] and PerSIM [9] introduce color information\nby computing pixel-wise ﬁdelity over chroma channels in the\nLa*b* color space. In addition to the color-based similarity,\nFSIMc computes similarity based on phase congruency and\ngradient magnitude, and PerSIM computes similarity based\non band-pass features that are obtained from the contrast\nsensitivity formulation of the retinal ganglion cells. FSIMc\nare PerSIM are used in the boosting operations. 5) Learning-based: It is not possible to handcraft a comprehensive quality estimator that covers all the aspects of visual\nsystem. Therefore, data-driven approaches can be used to\ndesign quality estimators. The majority of the data-driven approaches require distortion-speciﬁc images or subjective scores\nin the training, which can bias the performance of boosting\nmethods. Therefore, we use the data-driven quality estimator\nUNIQUE, which is trained with solely generic images in\nan unsupervised fashion.",
+    "token_count": 289,
+    "char_count": 1157
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c012",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Therefore, we use the data-driven quality estimator\nUNIQUE, which is trained with solely generic images in\nan unsupervised fashion. Images are pre-processed with a\nmean subtraction stage, a whitening operation, and color space\ntransformations to obtain more descriptive representations in\nterms of structure and color. These representations are fed to\na linear decoder to obtain sparse representations. An objective\nscore is obtained by comparing the sparse representations in\nterms of monotonic behavior. B. Boosting Methods\nRather than using speciﬁcally tuned deep networks or\ncomplicated architectures, we analyze the effect of boosting\nthrough two off-the-shelf methods. We use a generic neural\nnetwork and a support vector machine. The only parameter\nthat we adjust in the neural network architecture is the number\nof neurons in a single hidden layer, which is set to the total\nnumber of quality estimators used in the experiments. By\ndefault, we use mean square error as the cost function and\nLevenberg-Marquardt as the training function, which does\nnot necessarily guarantee a global minimum.",
+    "token_count": 274,
+    "char_count": 1099
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c013",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "By\ndefault, we use mean square error as the cost function and\nLevenberg-Marquardt as the training function, which does\nnot necessarily guarantee a global minimum. The default\nconﬁguration in a support vector machine includes a sequential\nminimal optimization (SMO) as the solver and a linear kernel. C. Databases\nIn the performance comparison of the quality estimators,\nwe use the LIVE [24], the multiply distorted LIVE (MULTI)\n[25], and the TID 2013 (TID13) databases [26]. The distortion\ntypes in these databases can be grouped into seven categories\nas given in Table I. JPEG, JPEG2000, and lossy compression\nof noisy images are included in the compression category. The noise category consists of Gaussian noise, additive noise\nin color components which is more intensive than additive\nnoise in the luminance component, spatially correlated noise,\nmasked noise, high frequency noise, impulse noise, quantization noise, image denoising, multiplicative Gaussian noise,\ncomfort noise, and lossy compression of noisy images. JPEG\nand JPEG2000 transmission errors are included in the communication category, and Gaussian blur and sparse sampling\nand reconstruction are in the blur category.",
+    "token_count": 297,
+    "char_count": 1188
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c014",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "JPEG\nand JPEG2000 transmission errors are included in the communication category, and Gaussian blur and sparse sampling\nand reconstruction are in the blur category. The color category\nconsists of change of color saturation, image color quantization\nwith dither and chromatic aberrations. Intensity shift and\ncontrast change are included in the global category, and noneccentricity pattern noise and local block-wise distortions are\nin the local category. TABLE I: The number of distorted images in each database. LIVE [24] MULTI [25] TID13 [26] Total\nCompression 460 180 375 1015\nNoise 174 180 1375 1729\nCommunication 174 - 250 424\nBlur 174 315 250 739\nColor - - 375 375\nGlobal - - 250 250\nLocal - - 250 250\nD. Data Partition and Number of Experiments\nIn the experiments, the performance of the quality estimators are measured with k-fold cross validation, in which k\nis set to 5. At each iteration, 20% of total images in each\ndatabase are selected as the test set. In Section III-B, we test\nthe performance of methods boosted with a neural network\nand a support vector machine. Each method is trained and\ntested 100 times.",
+    "token_count": 281,
+    "char_count": 1124
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c015",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "In Section III-B, we test\nthe performance of methods boosted with a neural network\nand a support vector machine. Each method is trained and\ntested 100 times. The test set in each iteration is also used to\nmeasure the performance of existing quality estimators. Since\nthere are 11 different quality estimators, 2 boosting methods,\nand 100 runs, we report the average performance of existing\nquality estimators for 2, 200 runs in Section III-A. E. Performance Metrics\nWe use accuracy-, linearity-, ranking-, and statistical\nsigniﬁcance-based metrics in the performance analysis and\ncomparison. Before the metric calculations, a mapping operation is performed between objective and subjective scores\nas suggested in [27]. The mapping formulation used in the\nsimulations can be expressed as\nV “β1\nˆ 1\n1´ 1\n2`exppβ2pV0´β3qq\n˙\n`β4V0`β5, (1)\nwhereV0 is an estimated score, V is a regressed output and βs\nare tuning parameters that are set according to the relationship\nbetween the quality estimates and the subjective scores.",
+    "token_count": 254,
+    "char_count": 1018
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c016",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "1) Accuracy: Root mean square error measures the accuracy of the quality estimators as\nRMSE “\ndřN\ns“1pxs´ysq2\nN , (2)\nwhere xs is an estimated score and ys is a subjective score\ncorresponding to an image indexed with s, and N is the total\nnumber of images. 2) Linearity: Pearson correlation coefﬁcient is used to\nmeasure the linearity of the predictions which is formulated\nas\nPLCC “\nřN\ns“1pxs´µxqpys´µyqbřN\ns“1pxs´µxq2¨\nbřN\ns“1pys´µyq2\n, (3)\nwhere xs is an estimated score and ys is a subjective score\ncorresponding to an image indexed with s, µ is the average\noperator, and N is the total number of images. 3) Ranking: Spearman correlation is used to measure the\nmonotonic relationship between quality estimates and subjective scores. Instead of using the exact values, rank of the values\nare used. The formulation of Spearman correlation coefﬁcient\nis given as\nSRCC “ 1´ 6řN\ns“1pXs´Ysq2\nN¨pN 2´ 1q , (4)\nwhere Xs is a rank assigned to a score xs and Ys is a rank\nassigned to a subjective score ys, which correspond to an\nimage indexed with s, and N is the total number of images.",
+    "token_count": 270,
+    "char_count": 1082
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c017",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "4) Statistical Signiﬁcance: In order to assess the signiﬁcance of the difference between correlation coefﬁcients, we\nuse the statistical signiﬁcance tests suggested in ITU-T Rec. P.1401 [28]. III. E XPERIMENTAL RESULTS\nA. Part 1\nWe report the performance of existing quality estimators\nin Table II. In terms of root mean square error and Pearson\ncorrelation, the best performing methods are PSNR-HMA in\nTABLE II: Performance of existing IQA methods using 5-fold validation for 2,200 runs.",
+    "token_count": 122,
+    "char_count": 488
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c018",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "In terms of root mean square error and Pearson\ncorrelation, the best performing methods are PSNR-HMA in\nTABLE II: Performance of existing IQA methods using 5-fold validation for 2,200 runs. PSNR PSNR-HA PSNR-HMA SSIM MS-SSIM CW-SSIM IW-SSIM SR-SIM FSIMc PerSIM UNIQUE\nRoot Mean Square Error\nLIVE 8.60 6.92 6.57 7.51 7.42 11.3 7.09 7.53 7.19 6.79 6.75\nMULTI 12.7 11.2 10.7 11.0 11.2 18.8 10.0 8.68 10.7 9.89 9.24\nTID13 0.87 0.65 0.69 0.76 0.69 1.20 0.68 0.61 0.68 0.64 0.61\nPearson Correlation Coefﬁcicent\nLIVE 0.927 0.953 0.958 0.945 0.947 0.871 0.951 0.945 0.950 0.955 0.956\nMULTI 0.737 0.799 0.819 0.813 0.803 0.406 0.846 0.887 0.820 0.850 0.871\nTID13 0.705 0.850 0.827 0.788 0.830 0.228 0.831 0.866 0.832 0.854 0.868\nSpearman Correlation Coefﬁcient\nLIVE 0.907 0.936 0.942 0.947 0.949 0.900 0.959 0.954 0.958 0.949 0.950\nMULTI 0.672 0.709 0.738 0.855 0.831 0.626 0.878 0.860 0.860 0.812 0.861\nTID13 0.700 0.846 0.816 0.740 0.784 0.562 0.776 0.806 0.850 0.852 0.859\nthe LIVE database and SR-SIM in the MULTI database. In\nterms of Spearman correlation, IW-SSIM is the best performing method in the LIVE and the MULTI databases.",
+    "token_count": 281,
+    "char_count": 1127
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c019",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "In\nterms of Spearman correlation, IW-SSIM is the best performing method in the LIVE and the MULTI databases. UNIQUE\nis the best performing quality estimator in terms of all the\nmetrics in the TID13 database. Neural network-based regression results are given in Table III. Neural networks trained with ﬁdelity-, perceptually-extended\nﬁdelity-, and perceptual similarity-based methods enhance\nthe performances in some categories and degrade in others\nwith minor changes. In terms of root mean square error\nand Pearson correlation, neural networks lead to signiﬁcant\nor minor enhancements for structural, spectral, unsupervised\nlearning-based, and feature-based similarity methods. In terms\nof Spearman correlation, neural networks mostly lead to some\nminor changes other than some major changes in the TID13\ndatabase. After the neural network-based regression, IW-SSIM\nbecomes the best performing quality estimator in terms of root\nmean square error and Pearson correlation in the LIVE and the\nMULTI databases. In the TID13 database, SR-SIM becomes\nthe best performing quality estimator in terms of root mean\nsquare error and Pearson correlation after the neural networkbased regression.",
+    "token_count": 296,
+    "char_count": 1185
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c020",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "In the TID13 database, SR-SIM becomes\nthe best performing quality estimator in terms of root mean\nsquare error and Pearson correlation after the neural networkbased regression. We also perform support vector machinebased regression and the results are given in Table IV. Support\nvector regression does not lead to signiﬁcant changes when\nit is only trained with one method and the best performing\nmethods are the same with the existing methods. In Table\nV, we report the best performance values of existing and\nregressed methods. Moreover, we also report the performances\nof neural network- and support vector machine-based boosting. Existing methods regressed with neural networks perform\nbetter than existing methods in all the categories other than\nSpearman in the LIVE database, and the performances of\nexisting methods regressed with support vector machines are\nsimilar to existing methods. Support vector machine-based\nboosting performs better than existing and regressed existing\nmethods in the MULTI and the TID13 databases whereas in\nthe LIVE database, it is better in some categories and worse\nin others. Neural network-based boosting leads to the best\nperformances in all the categories. B.",
+    "token_count": 300,
+    "char_count": 1201
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c021",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Neural network-based boosting leads to the best\nperformances in all the categories. B. Part 2\nIn this section, we discuss the relative performance change\nas a consequence of adding new methods into the boosting\nalgorithms. We start with the worst performing methods in\neach category and add the next best into the boosting in the\nnext step. Based on the results in Table II, we rank the methods\nfor each database in a descending order in the root mean\nsquare error category, and in an ascending order in Pearson\nand Spearman correlation categories. The results are given in\nFig. 1 in which the lengths of the main bars correspond to the\nmean values and the lengths of the thin bars plotted over the\nmain bars show the standard deviations. We plot a horizontal\nblack line in correlation ﬁgures, after which the increase in\ncorrelation coefﬁcients becomes statistically signiﬁcant with\nrespect to the regressed worst performing quality estimator. Red bars correspond to the performance of support vector\nmachine-based boosting and blue bars correspond to the neural\nnetwork-based boosting.",
+    "token_count": 271,
+    "char_count": 1087
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c022",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Red bars correspond to the performance of support vector\nmachine-based boosting and blue bars correspond to the neural\nnetwork-based boosting. As the number of fused methods increase, there is a general\ndecrease in terms of root mean square error and an increase in\nterms of Pearson and Spearman correlations. Neural networkbased boosting outperforms support vector machine-based\nboosting in terms of root mean square error in all the boosting\nscenarios when two or more methods are fused. Both Pearson\nand Spearman follow a non-decreasing behavior with respect\nto the number of fused methods other than a few exceptions. In terms of Pearson correlation, neural network-based boosting\noutperforms support vector machine-based boosting in all the\nboosting scenarios. In terms of Spearman correlation, the\nworst performing quality estimators regressed with support\nvector machines perform slightly better than neural-networkbased ones in the LIVE and the MULTI databases. However,\nin all the other scenarios, neural network-based boosting\noutperforms support vector machine-based boosting. IV. C ONCLUSION\nWe analyze the effect of boosting in image quality assessment using multi-method fusion.",
+    "token_count": 298,
+    "char_count": 1192
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c023",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "IV. C ONCLUSION\nWe analyze the effect of boosting in image quality assessment using multi-method fusion. Experimental results\nshow that boosting-based methods outperform existing best\nperforming methods in 17 out of 18 comparisons and neural\nnetwork-based boosting outperforms support vector machinebased boosting when two or more methods are fused. Based\nTABLE III: Performance of IQA methods with neural network-based regression using 5-fold validation for 100 runs.",
+    "token_count": 117,
+    "char_count": 468
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c024",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Based\nTABLE III: Performance of IQA methods with neural network-based regression using 5-fold validation for 100 runs. PSNR PSNR-HA PSNR-HMA SSIM MS-SSIM CW-SSIM IW-SSIM SR-SIM FSIMc PerSIM UNIQUE\nRoot Mean Square Error\nLIVE 8.21 6.93 6.61 5.98 5.91 8.81 5.49 5.80 5.56 6.35 6.09\nMULTI 13.3 11.4 10.8 8.68 9.56 14.6 7.91 8.29 8.12 9.76 8.80\nTID13 0.86 0.64 0.68 0.72 0.64 1.70 0.68 0.59 0.60 0.62 0.61\nPearson Correlation Coefﬁcicent\nLIVE 0.934 0.954 0.957 0.966 0.967 0.923 0.971 0.967 0.970 0.961 0.964\nMULTI 0.710 0.793 0.821 0.890 0.866 0.646 0.907 0.900 0.903 0.855 0.886\nTID13 0.722 0.852 0.830 0.814 0.852 0.442 0.836 0.879 0.872 0.864 0.870\nSpearman Correlation Coefﬁcient\nLIVE 0.904 0.937 0.941 0.947 0.950 0.894 0.958 0.954 0.957 0.948 0.950\nMULTI 0.660 0.701 0.738 0.858 0.827 0.613 0.883 0.874 0.872 0.797 0.861\nTID13 0.706 0.845 0.813 0.794 0.834 0.558 0.807 0.843 0.850 0.852 0.860\nTABLE IV: Performance of IQA methods with support vector machine-based regression using 5-fold validation for 100 runs.",
+    "token_count": 253,
+    "char_count": 1015
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c025",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "PSNR PSNR-HA PSNR-HMA SSIM MS-SSIM CW-SSIM IW-SSIM SR-SIM FSIMc PerSIM UNIQUE\nRoot Mean Square Error\nLIVE 8.58 7.00 6.66 7.58 7.51 11.90 7.10 7.76 7.27 6.89 6.79\nMULTI 13.1 11.3 10.7 11.0 11.3 18.5 10.0 8.75 10.9 10.0 9.23\nTID13 0.88 0.66 0.70 0.77 0.69 1.21 0.69 0.62 0.69 0.64 0.61\nPearson Correlation Coefﬁcient\nLIVE 0.928 0.953 0.958 0.945 0.947 0.871 0.952 0.945 0.951 0.955 0.956\nMULTI 0.720 0.798 0.820 0.814 0.798 0.399 0.851 0.887 0.816 0.847 0.874\nTID13 0.706 0.848 0.826 0.787 0.828 0.226 0.829 0.866 0.833 0.855 0.869\nSpearman Correlation Coefﬁcient\nLIVE 0.908 0.935 0.942 0.947 0.950 0.901 0.960 0.953 0.958 0.948 0.951\nMULTI 0.652 0.714 0.738 0.855 0.828 0.616 0.882 0.860 0.855 0.813 0.864\nTID13 0.701 0.843 0.814 0.736 0.785 0.558 0.773 0.807 0.849 0.853 0.859\nTABLE V: Performance of existing, regressed, and boosted\nIQA methods.",
+    "token_count": 211,
+    "char_count": 846
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_abstract_c026",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "Existing NN SVR NN SVR\nBest Best Best Boost Boost\nRoot Mean Square Error\nLIVE 6.57 5.49 6.66 4.54 5.62\nMULTI 8.68 7.91 8.75 6.73 7.07\nTID13 0.61 0.59 0.61 0.45 0.51\nPearson Correlation Coefﬁcicent\nLIVE 0.958 0.971 0.958 0.980 0.970\nMULTI 0.887 0.907 0.887 0.934 0.926\nTID13 0.868 0.879 0.869 0.931 0.909\nSpearman Correlation Coefﬁcient\nLIVE 0.959 0.958 0.960 0.969 0.956\nMULTI 0.878 0.883 0.882 0.918 0.915\nTID13 0.859 0.860 0.859 0.921 0.895\non these observations, we can claim that boosting generally\nenhances the performance of image quality assessment algorithms and the enhancement level depends on the type of the\nboosting strategy. Moreover, boosting the worst performing\nquality estimator with two or more additional methods leads\nto statistically signiﬁcant improvements in all the scenarios\nindependent of the boosting technique.",
+    "token_count": 209,
+    "char_count": 839
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_references_c000",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 6,
+    "text": "[1] K. Egiazarian, J. Astola, N. Ponomarenko, V . Lukin, F. Battisti, and\nM. Carli, “A new full-reference quality metrics based on HVS,” in the\nproceedings of VPQM, , 2006.\n[2] N. Ponomarenko, F. Silvestri, K. Egiazarian, M. Carli, J. Astola, and\nV . Lukin, “On between-coefﬁcient contrast masking of DCT basis\nfunctions,” in the proceedings of VPQM , 2007, pp. 1–4.\n[3] N. Ponomarenko, O. Ieremeiev, V . Lukin, K. Egiazarian, and M. Carli,\n“Modiﬁed image Visual quality metrics for contrast change and mean\nshift accounting,” the proceedings of CADSM , 2011.\n[4] Z. Wang, E. P. Simoncelli, and A. C. Bovik, “Multi-scale structural\nsimilarity for image quality assessment,” the Thirty-Seventh Asilomar\nConference on Signals, Systems and Computers , vol. 2, pp. 9–13, 2004.\n[5] Z. Wang and E. P. Simoncelli, “Translation insensitive image similiarity\nin complex wavelet domain,” vol. II, no. March, pp. 573–576, 2005.\n[6] Z. Wang and Q. Li, “Information content weighting for perceptual image\nquality assessment.,” IEEE Transactions on Image Processing , vol. 20,\nno. 5, pp. 1185–98, May 2011.\n[7] M. Carnec, P.",
+    "token_count": 277,
+    "char_count": 1110
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_references_c001",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 6,
+    "text": "Wang and Q. Li, “Information content weighting for perceptual image\nquality assessment.,” IEEE Transactions on Image Processing , vol. 20,\nno. 5, pp. 1185–98, May 2011.\n[7] M. Carnec, P. Le Callet, and Dominique B., “Objective quality\nassessment of color images based on a generic perceptual reduced\nreference,” vol. 4, no. April, pp. 239–256, 2008.\n[8] L. Zhang, L. Zhang, X. Mou, and D. Zhang, “FSIM: A Feature similarity\nindex for image quality qssessment.,” IEEE Transactions on Image\nProcessing, vol. 20, no. 8, pp. 2378–86, Aug. 2011.\n[9] D. Temel and G. Alregib, “PerSIM: Multi-Resolution Image Quality\nAssessment in the Perceptually Uniform Color Domain,” in the proceedings of ICIP , 2015.\n[10] H. R. Sheikh, A. C. Bovik, and G. de Veciana, “An information ﬁdelity\ncriterion for image quality assessment using natural scene statistics.,”\nIEEE Transactions on Image Processing , vol. 14, no. 12, pp. 2117–28,\nDec. 2005.\n[11] P. Le Callet, C. Viard-Gaudin, and D. Barba, “A convolutional neural\nnetwork approach for objective video quality assessment.,” IEEE\ntransactions on neural networks / a publication of the IEEE Neural\nNetworks Council, vol. 17, no. 5, pp. 1316–27, Sept. 2006.\n[12] L. Kang, P. Ye, Y . Li, and D.",
+    "token_count": 306,
+    "char_count": 1227
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_references_c002",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 6,
+    "text": "17, no. 5, pp. 1316–27, Sept. 2006.\n[12] L. Kang, P. Ye, Y . Li, and D. Doermann, “Convolutional neural networks\nfor no-reference image quality assessment,” the proceedings of CVPR ,\n2014.\n[13] D. Temel, M. Prabhushankar, and G. AlRegib, “UNIQUE: Unsupervised\nimage quality estiamtion,” IEEE Signal Processing Letters , 2016.\n[14] M. Kearns, “Thoughts on hypothesis boosting,” Machine Learning Class\nProject, 1988.\n(a)LIVE-RMSE\n(b) MULTI-RMSE\n(c) TID-RMSE\n(d)LIVE-PLCC\n(e) MULTI-PLCC\n(f) TID-PLCC\n(g) LIVE-SRCC\n(h) MULTI-SRCC\n(i) TID-SRCC\nFig. 1: Performance of boosting methods versus number of fused methods.\n[15] M. Kearns and L. Valiant, “Cryptographic limitations on learning\nboolean formulae and ﬁnite automata,” J. ACM , vol. 41, no. 1, pp. 67–95, Jan. 1994.\n[16] R. E. Schapire, “The strength of weak learnability,” Mach. Learn., vol. 5, no. 2, pp. 197–227, July 1990.\n[17] A. Leontaris, P. C. Cosman, and A. R. Reibman, “Quality evaluation\nof motion-compensated edge artifacts in compressed video,” IEEE\nTransactions on Image Processing , vol. 16, no. 4, April 2007.\n[18] T. J. Liu, W. Lin, and C. C. J.",
+    "token_count": 278,
+    "char_count": 1112
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_references_c003",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 6,
+    "text": "R. Reibman, “Quality evaluation\nof motion-compensated edge artifacts in compressed video,” IEEE\nTransactions on Image Processing , vol. 16, no. 4, April 2007.\n[18] T. J. Liu, W. Lin, and C. C. J. Kuo, “A multi-metric fusion approach\nto visual quality assessment,” in Quality of Multimedia Experience\n(QoMEX), 2011 Third International Workshop on, Sept 2011, pp. 72–77.\n[19] T. J. Liu, W. Lin, and C. C. J. Kuo, “Image quality assessment using\nmulti-method fusion,” IEEE Transactions on Image Processing, vol. 22,\nno. 5, pp. 1793–1807, May 2013.\n[20] T. J. Liu, K. H. Liu, J. Y . Lin, W. Lin, and C. C. J. Kuo, “A ParaBoost\nmethod to image quality assessment,” IEEE Transactions on Neural\nNetworks and Learning Systems , vol. PP, no. 99, pp. 1–15, 2015.\n[21] H. Ko, R. Song, and C.-C. J. Kuo, “A ParaBoost stereoscopic image\nquality assessment (PBSIQA) system,” arXiv, 2016.\n[22] L. Zhang and H. Li, “SR-SIM: A fast and high performance IQA index\nbased on spectral residual,” in 2012 19th IEEE International Conference\non Image Processing , Sept 2012, pp. 1473–1476.\n[23] C. J. V . Lambrecht, Vision models and applications to image and video\nprocessing , Kluwer Academic Publishers, 2001.\n[24] H. R. Sheikh, L. Cormack, and A. C.",
+    "token_count": 307,
+    "char_count": 1229
+  },
+  {
+    "chunk_id": "boosting_in_image_quality_assess_references_c004",
+    "paper_id": "boosting_in_image_quality_assess",
+    "paper_title": "Boosting in Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 6,
+    "text": "1473–1476.\n[23] C. J. V . Lambrecht, Vision models and applications to image and video\nprocessing , Kluwer Academic Publishers, 2001.\n[24] H. R. Sheikh, L. Cormack, and A. C. Bovik, “LIVE\nImage Quality Assessment Database Release 2,”\nhttp://live.ece.utexas.edu/research/quality, 2006.\n[25] D. Jayaraman, A. K. Moorthy A. Mittal, and A. C. Bovik, “Objective\nQuality Assessment of Multiply Distorted Images,” 2012, Proceedings\nof Asilomar Conference on Signals, Systems and Computers.\n[26] N. Ponomarenko, L. Jin, O. Ieremeiev, V . Lukin, K. Egiazarian, J. Astola,\nB. V ozel, K. Chehdi, M. Carli, F. Battisti, and C.-C. J. Kuo, “Image\ndatabase TID2013: Peculiarities, results and perspectives ,” Signal\nProcessing: Image Communication , vol. 30, pp. 57 – 77, 2015.\n[27] H. R. Sheikh, M. F. Sabir, and A. C. Bovik, “A statistical evaluation\nof recent full reference image quality assessment algorithms,” IEEE\nTransactions on Image Processing , 2006.\n[28] ITU, “Statistical analysis , evaluation and reporting guidelines of quality\nmeasurements,” ITU-T Rec P .1401, 2012.",
+    "token_count": 266,
+    "char_count": 1067
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_abstract_c000",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "Abstract",
+    "page": 1,
+    "text": "JOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 1\nScale Guided Hypernetwork for Blind\nSuper-Resolution Image Quality Assessment\nJun Fu",
+    "token_count": 36,
+    "char_count": 144
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_abstract_with_the_emergence_of_i_c000",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "Abstract—With the emergence of image super-resolution (SR)",
+    "page": 1,
+    "text": "algorithm, how to blindly evaluate the quality of super-resolution\nimages has become an urgent task. However, existing blind\nSR image quality assessment (IQA) metrics merely focus on\nvisual characteristics of super-resolution images, ignoring the\navailable scale information. In this paper, we reveal that the\nscale factor has a statistically significant impact on subjective\nquality scores of SR images, indicating that the scale information\ncan be used to guide the task of blind SR IQA. Motivated\nby this, we propose a scale guided hypernetwork framework\nthat evaluates SR image quality in a scale-adaptive manner. Specifically, the blind SR IQA procedure is divided into three\nstages, i.e., content perception, evaluation rule generation, and\nquality prediction. After content perception, a hypernetwork\ngenerates the evaluation rule used in quality prediction based\non the scale factor of the SR image. We apply the proposed scale\nguided hypernetwork framework to existing representative blind\nIQA metrics, and experimental results show that the proposed\nframework not only boosts the performance of these IQA metrics\nbut also enhances their generalization abilities.",
+    "token_count": 293,
+    "char_count": 1172
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_abstract_with_the_emergence_of_i_c001",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "Abstract—With the emergence of image super-resolution (SR)",
+    "page": 1,
+    "text": "Source code will\nbe available at https://github.com/JunFu1995/SGH. Index Terms —scale, hypernetwork, super-resolution image\nquality assessment\nI. I NTRODUCTION\nI\nMAGE super-resolution (SR) is an effective technique to\nconstruct a high-definition (HD) image with finer details\nfrom one or multiple low-resolution images. The past two\ndecades have witnessed the bloom of image SR algorithms\nwith a broad of applications including video surveillance [1],\nvideo streaming [2], [3], free-viewpoint television [4], [5], etc. However, how to reasonably evaluate the quality of SR images\nto compare and optimize SR methods remains challenging. The most credible approach for SR image quality assessment (IQA) is the subjective test, where the mean of\nscores rated by subjects is regarded as the visual quality of\nSR images. However, the subjective test is time-consuming,\nexpensive, and cannot be applied to real-world SR optimization systems since it requires extensive human interaction. Consequently, objectively evaluating the visual quality of SR\nimages emerges as time requires, which is consistent with\nsubjective evaluation but not human-in-loop.",
+    "token_count": 286,
+    "char_count": 1146
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_abstract_with_the_emergence_of_i_c002",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "Abstract—With the emergence of image super-resolution (SR)",
+    "page": 1,
+    "text": "Consequently, objectively evaluating the visual quality of SR\nimages emerges as time requires, which is consistent with\nsubjective evaluation but not human-in-loop. Existing objective IQA metrics can be classified into three\ncategories: full-reference (FR) metrics which require the original uncorrupted image as a reference, reduced-reference (RR)\nmetrics which require partial information about the reference\nimage, and no-reference (NR) metrics (also known as blind\nmetrics) which do not need any reference information. In\npractical SR systems, the original HD image is generally\nunavailable. As a result, most FR and RR metrics might not\nbe used for SR IQA. Thus, it is highly desired to develop\n7.85 / 2\n6.6 / 4\n3.78 / 8\n9.44 / 2\n6.8 / 4\n4.1 / 8\n8.45 / 2\n6.423 / 4\n3.7 / 8\nBicubic SRCNN Yang10\nFig. 1. Examples of SR images generated by Bicubic, SRCNN [6], and\nYang10 [7]. The text under each SR image contains the subjective quality\nscore and the scale factor of the SR image.\neffective blind IQA metrics to evaluate the visual quality of\nSR images.",
+    "token_count": 263,
+    "char_count": 1055
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_abstract_with_the_emergence_of_i_c003",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "Abstract—With the emergence of image super-resolution (SR)",
+    "page": 1,
+    "text": "The text under each SR image contains the subjective quality\nscore and the scale factor of the SR image.\neffective blind IQA metrics to evaluate the visual quality of\nSR images. In general, there are various spatial artifacts (such as\nblurring and blocking effects) in the generated SR images\ncompared to the original HD images, of which the loss of highfrequency information is the main cause. As a result, earlier\nblind SR IQA approaches exploit statistical features in spatial\nand frequency domains to quantify artifacts of SR images. However, these methods [8]–[11] typically involve manual\nfeature engineering, which is a laborious and error-prone\nprocess. To alleviate this problem, Bare et al. [12] propose\nthe first convolutional neural network-based blind SR IQA\nmetric, which automatically learns the mapping from image to\nquality. With the success of the first deep learning-based blind\nSR IQA measure, researchers shift their focus from feature\nengineering to neural architecture engineering.",
+    "token_count": 251,
+    "char_count": 1004
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_abstract_with_the_emergence_of_i_c004",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "Abstract—With the emergence of image super-resolution (SR)",
+    "page": 1,
+    "text": "With the success of the first deep learning-based blind\nSR IQA measure, researchers shift their focus from feature\nengineering to neural architecture engineering. In the past few\nyears, various neural architecture strategies including deeper\nnetwork architecture [13], dual-branch framework [14], [15],\nand visual attention mechanisms [16], have been proposed to\nfurther improve the performance. The aforementioned blind SR IQA methods focus on learning the mapping from image to quality, but pay no attention to\navailable quality-aware priori, i.e., scale factors of SR images. As shown in Fig. 1, the visual quality of the SR images\ngenerated by the three SR algorithms and their subjective\nquality scores decrease significantly with the increase of the\nscale factor. This indicates that the scale information of the SR\nJOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 2\n2 4 8\nScale Factor\n8Rank\n2 3 4\nScale Factor\n0.0\n0.2\n0.4\n0.6\n0.8\n1.0Subjective Quality Score\n2 3 4 5 6 8\nScale Factor\nSubjective Quality Score\n(a) (b) (c)\nFig. 2.",
+    "token_count": 260,
+    "char_count": 1043
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_abstract_with_the_emergence_of_i_c005",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "Abstract—With the emergence of image super-resolution (SR)",
+    "page": 1,
+    "text": "14, NO. 8, AUGUST 2021 2\n2 4 8\nScale Factor\n8Rank\n2 3 4\nScale Factor\n0.0\n0.2\n0.4\n0.6\n0.8\n1.0Subjective Quality Score\n2 3 4 5 6 8\nScale Factor\nSubjective Quality Score\n(a) (b) (c)\nFig. 2. Distribution of subjective quality score under different scale factors. (a) On the Waterloo dataset; (b) On the QADS dataset; (c) On the CVIU dataset.\nimage is highly correlated with its subjective quality score. In\nother words, the scale information is useful for the task of\nSR IQA. However, how to effectively use scale information to\nguide the quality evaluation of SR images remains open. One vanilla method is to concatenate the scale information\nand the image in the feature space and map the fused features\nto the quality score. Unfortunately, such an approach has\nlimited performance, which is proven in the section of the\nexperiment. To address this issue, we propose a scale guided\nhypernetwork framework, which adopts distinct evaluation\nrules for SR images with different scale factors. Specifically,\nthe proposed framework divides the blind SR IQA procedure\ninto three stages, i.e., content perception, evaluation rule generation, and quality prediction.",
+    "token_count": 288,
+    "char_count": 1155
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_abstract_with_the_emergence_of_i_c006",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "Abstract—With the emergence of image super-resolution (SR)",
+    "page": 1,
+    "text": "Specifically,\nthe proposed framework divides the blind SR IQA procedure\ninto three stages, i.e., content perception, evaluation rule generation, and quality prediction. After content perception, the\nscale-adaptive evaluation rule is generated by a hypernetwork,\nand then used for quality prediction. Our major contributions are as follows:\n• Up to our best knowledge, this paper is the first to reveal\nthat the available scale information can be used to guide\nthe task of blind SR IQA.\n• We present a scale guided hypernetwork framework,\nwhich fills the blank in scale-guided blind SR IQA.\n• We conduct sufficient experiments to verify the effectiveness and superiority of the proposed method. The remainder of this paper is organized as follows. Section\nII introduces the related work. Section III explains the motivation of this paper. Section IV elaborates the proposed scale\nguided hypernetwork. Section V provides the experimental",
+    "token_count": 233,
+    "char_count": 935
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c000",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "II. R ELATED WORK\nA. Super-Resolution Image Quality Assessment\nSince we design a blind IQA metric for image superresolution, we only review existing blind SR IQA methods. Generally, existing blind super-resolution image quality assessment (SR IQA) metrics could be classified into two main\ncategories: handcrafted feature-based methods [8]–[11] and\ndeep learning-based ones [12]–[17]. In the first category, researchers are devoted to regressing\nthe quality score of the SR image based on handcrafted\nfeatures. Yeganeh et al. [8] manually design three statistical\ncharacteristics for blind SR IQA: frequency energy falloff\nstatistics, dominant orientation statistics, and spatial continuity\nstatistics. Ma et al. [9] blindly evaluate SR images based on\ntheir local frequency, global frequency, and spatial discontinuity. Zhou et al. [10] map the texture and structure of the SR\nimage to the quality score. Greeshma et al. [11] build a superresolution quality criterion based on the estimation of fuzzy\ngradient profiles and multi-scale energy bands. Although these\nhandcrafted features show promising results, their generalization abilities are typically limited.",
+    "token_count": 290,
+    "char_count": 1163
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c001",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "Although these\nhandcrafted features show promising results, their generalization abilities are typically limited. In the second category, researchers aim to automatically\nlearn the mapping from image to quality. Bare et al. [12]\nand Fang et al. [17] model the mapping function through\nshallow neural networks, which only consist of several convolutional layers. In order to achieve better modeling ability,\nvarious neural architecture design strategies are proposed. Lu\net al. [13] deepen the depth of IQA models, while Zhao et\nal. [14] and Liu et al. [15] increase the width of IQA models,\ni.e., adopting dual-branch architectures. Besides, Zhang et\nal. [16] introduce channel-spatial attention mechanisms into\nIQA models. However, these methods are still performance\nlimited since they only consider the image features while\nignoring the available quality-aware priori, i.e., the scale information. In this paper, we first verify that the scale information\nis highly correlated with subjective scores of SR images\nthrough statistical analysis, and then present the first scale\nguided hypernetwork framework to effectively exploit the scale\ninformation for blind SR IQA. B.",
+    "token_count": 293,
+    "char_count": 1174
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c002",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "B. Hypernetwork\nThe hypernetwork [18] is a neural network that generates\nthe parameters of another network, which has been widely\nused in neural architecture search [19], light field compression [20], and general image quality assessment [21]. Here,\nwe only discuss the related work [21] in detail. In the\nhypernetwork-based general IQA method [21], the evaluation\nrule, i.e., the weights and biases of fully-connected layers\nused in the stage of quality prediction, is adaptively generated\naccording to image semantics. While this method shows impressive generalization capabilities for general IQA tasks, it is\nnot optimal to apply it directly to SR IQA tasks. In this paper,\nwe design a scale guided hypernetwork framework specifically\nfor SR IQA tasks. JOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 3\nIII. M OTIVATION\nIn this section, we qualitatively and quantitatively verify the\nsignificant impact of scale factors on subjective quality scores\nof SR images, which motivates us to develop a scale guided\nhypernetwork framework for blind SR IQA. A.",
+    "token_count": 266,
+    "char_count": 1065
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c003",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "A. Qualitative Analysis\nWe divide SR images into groups based on their scale\nfactors and then visualize the distribution of subjective quality\nscores in each group through violin plots. The results are\npresented in Fig. 2. As shown, each group has a different\ndistribution of subjective quality scores. In addition, the average MOS (Rank) of each group decreases (increases) with the\nincrease of the scale factor. Therefore, we conclude that the\nscale factor could provide us with some clues about the visual\nquality of SR images. B. Quantitative Analysis\nTABLE I\nALEXANDER -GOVERN APPROXIMATION TESTS . Datasets Statistic value p value\nCVIU [9] 84.67 3.23e-14\nWaterloo [8] 49.48 7.09e-11\nQADS [22] 89.83 8.67e-11\nBased on the results of the qualitative analysis, it is natural\nto ask whether the differences among all groups are statistically significant. Therefore, we conduct a one-way Analysis\nof Variance (ANOV A). Specifically, ANOV A quantifies the\ndifferences in means between groups:\ng,p =G(m0,...,m i,...,m n), (1)\nwheremi represents the average MOS (Rank) of all SR images\nwith the i-th scale factor, and G produces the statistic value\ng and the probability p according to {mi}n\ni=0.",
+    "token_count": 298,
+    "char_count": 1194
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c004",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "When the\nprobability p is less than or equal to the significance level α,\nwe can conclude that all groups are statistically significantly\ndifferent. The significance level α is commonly set to 0.05,\nandG employs the Alexander-Govern approximation test [23]\nsince it does not assume homoscedasticity. In this paper, we do\nnot consider differences introduced by SR methods. Therefore,\nwe calculate the statistic value g and the probabilityp for each\nSR method and report the average results in Table I. As shown,\nthe probability p is far smaller than the significance level with\na value of 0.05 across three datasets:\np<<α. (2)\nTherefore, we conclude that the scale factor has a statistically\nsignificant influence on the visual quality of the SR image. In\nother words, the scale factor is useful for the task of SR IQA. IV. M ETHOD\nA. Problem F ormulation\nGiven a low-resolution image IL and its super-resolution\nversion IH, we aim to predict the visual quality of the highdefinition image IH.",
+    "token_count": 248,
+    "char_count": 992
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c005",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "IV. M ETHOD\nA. Problem F ormulation\nGiven a low-resolution image IL and its super-resolution\nversion IH, we aim to predict the visual quality of the highdefinition image IH. Generally, this task is formulated as a\nregression problem:\nq =f (IH ;θ), (3)\nwhere the function f with parameters θ maps the superresolution image IH into the quality score q, and parameters\nθ are shared among all super-resolution images. According to the aforementioned analysis, we know that\nit is necessary to take the scale information into account in\nthe task of blind SR IQA. However, how to effectively use\nscale information to guide the quality evaluation of SR images\nremains unexplored. One vanilla method is to concatenate\nthe scale information and the high-definition image in the\nfeature space and predict the quality score based on the\nfused features. Unfortunately, such an approach has limited\nperformance, which will be disscussed in detail in the section\nof the experiment. To address this issue, we proposed a scale\nguided hypernetwork framework, which uses the scale information to generate scale-aware quality predictor. Therefore,\nwe reformulate Eq.",
+    "token_count": 286,
+    "char_count": 1146
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c006",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "To address this issue, we proposed a scale\nguided hypernetwork framework, which uses the scale information to generate scale-aware quality predictor. Therefore,\nwe reformulate Eq. 3 as follows:\nq =f (IH ;θsIH\n),\nθsIH\n=h(sIH ;β), (4)\nwhere the function f predict the quality score q with imageaware parameters θIH , and the function h with parameters β\ngeneratesθsIH\nbased on the scale factorsIH . It is worth noting\nthat the scale factor sIH is not explicitly provided, but can be\nimplicitly derived as follows:\nsIH = WIH\nWIL\n, (5)\nwhereWIH andWIL are the width of IH andIL, respectively. B. Framework Overview\nAs shown in Fig. 3, the proposed scale guided hypernetwork\nconsists of three stages, i.e., content perception, evaluation rule\ngeneration, and quality prediction. In the first stage, we extract\ndistinguishable features from the input super-resolution image. Then, we feed the scale factor into the hypernetwork for\ngenerating the evaluation rule, i.e., weights and biases of fullyconnected layers. Finally, we map extracted distinguishable\nfeatures into the quality score through the generated evaluation\nrule. The details of these three stages are introduced in\nsequence. C.",
+    "token_count": 296,
+    "char_count": 1186
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c007",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "Finally, we map extracted distinguishable\nfeatures into the quality score through the generated evaluation\nrule. The details of these three stages are introduced in\nsequence. C. Content Perception\nGenerally, SR images suffer from severe high-frequency\ninformation loss, which leads to hierarchical distortions such\nas low-level texture damage and high-level structure degradation. Therefore, in the task of SR IQA, it is necessary\nto discover representative features that reflect these visual\ndistortions. Considering that manually designing features is\nJOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 4\nScale factor\n(e.g., [2] )\nQuality score: 8.5\nFC1 FC2 FC3 FC4\nStage II: Evaluation Rule Generation\nStage I: Content Perception Stage III: Quality Prediction\nEncoder\nFC\nHypernetwork\nWeights BiasWeights Bias Weights BiasWeights Bias\nSuper-resolved image\nFC Fully-connected Layer\nFC\nFC5\nWeights Bias\nG\nA\nP\nGlobal Average PoolingGAP\nFig. 3. The diagram of scale guided hypernetwork framework.\ntime-consuming, we resort to automatic feature engineering.",
+    "token_count": 265,
+    "char_count": 1061
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c008",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "3. The diagram of scale guided hypernetwork framework.\ntime-consuming, we resort to automatic feature engineering. Specifically, we use a learning-based encoder to capture the\ndistortion-aware information:\nF =fe(IH ;θe), (6)\nwhere the function fe typically represents classification model\nwith the pretrained parameters θe, and F is the resulted 3D\nfeature maps. Since the stage of quality prediction takes the\n1D vector as input, we apply a globally average pooling and\na flattened operation over F :\nV =flatten (GAP (F )). (7)\nIt is worth noting that the improved strategies of feature\nextraction such as multi-scale representations could be easily\nincorporated into our framework. D. Evaluate Rule Generation\nIn the framework of hypernetwork-based IQA, the evaluation rule, i.e., the weights and biases of fully-connected\nlayers used in the stage of quality prediction, is adaptively\ngenerated according to image semantics. While this framework\nexhibits impressive generalization capabilities in the general\nIQA tasks, directly applying it into SR IQA tasks is not\noptimal.",
+    "token_count": 269,
+    "char_count": 1076
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c009",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "While this framework\nexhibits impressive generalization capabilities in the general\nIQA tasks, directly applying it into SR IQA tasks is not\noptimal. Considering that the scale factor has a statistically\nsignificant impact on the visual quality of SR images, we\ngenerate the evaluation rule according to the scale factor of\nSR images. Assume Nq fully-connected layers are used in the stage of\nquality prediction, and the parameters of the j-th layer are\nthe weights wj and the biases bj, where j∈{ 0, 1,...,N q−1}. Then, the parameters of each layer are independently generated\nbased on the scale representation S:\nwj =FC j,1(S), b j =FC j,2(S), (8)\nwhere FC j,1 and FC j,2 are fully-connected layers. Here, the\nscale representation S is extracted as follow:\nS =fs(SIH ), (9)\nwhere fs consists of two fully-connected layers. E. Quality Prediction\nAfter the stage of evaluation rule generation, we use the\ngenerated parameters to map the extracted features into the\nquality score:\nq =ft(V ;{wj,b j}Nq−1\nj=0 ), (10)\nwhere q is the predicted score.",
+    "token_count": 261,
+    "char_count": 1045
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c010",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "The mean absolute error is\nemployed as the loss function:\nLoss = 1\nM\nMX\nm=1\n|qm−Qm|, (11)\nwhereQm represents the ground-truth quality score of the mth SR image, and M indicates the number of SR images in a\nmini-batch. V. E XPERIMENT\nA. Dataset and Evaluation Criterion\nWe conduct experiments on three widely-used SR IQA\ndatasets, i.e., Waterloo [8], CVIU [9], and QADS [22] datasets. The details of these datasets are reported in Table II. We\nchoose three evaluation criteria, i.e., Spearman Rank Correlation Coefficient (SRCC), Pearson Linear Correlation Coefficient (PLCC), and Kendall’s Rank Correlation Coefficient\n(KRCC), to quantify the performance of SR IQA metrics. SRCC and KRCC reflect the prediction monotonicity, while\nPLCC measures the prediction accuracy. The higher the value\nof these evaluation criteria, the better the SR IQA methods. Notice that we calculate SRCC, PLCC, and KRCC through\nthe open-source tool called SciPy [26]. B. Implementation Details\nWe implement the proposed SGH framework as follows. In\nthe content perception stage, the encoder could be seamlessly\nreplaced by feature extractors of existing IQA metrics.",
+    "token_count": 286,
+    "char_count": 1144
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c011",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "B. Implementation Details\nWe implement the proposed SGH framework as follows. In\nthe content perception stage, the encoder could be seamlessly\nreplaced by feature extractors of existing IQA metrics. In\nthe evaluation rule generation stage, we obtain the scale\nrepresentation through two FC layers with 128 neurons. In the\nquality prediction stage, following HyperIQA [21], we use five\nFC layers, whose output dimensions are 128, 64, 32, 16, and 1. JOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 5\nTABLE II\nDETAILS OF THREE POPULAR SR IQA DATASETS .\ndatasets LR Images SR Images Number of SR methods Scale factors Labels Label Range\nWaterloo 13 312 8 {2,4,8} Rank [1,5]\nQADS 60 980 21 {2,3,4} MOS [0, 1]\nCVIU 30 1620 9 {2,3,4,5,6,8} MOS [0, 10]\nTABLE III\nSINGLE -DATASET PERFORMANCE RESULTS OF SCALE GUIDED HYPERNETWORK (SGH) FRAMEWORK .",
+    "token_count": 211,
+    "char_count": 847
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c012",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "Base Model Framework Waterloo QADS CVIU\nSRCC PLCC KRCC SRCC PLCC KRCC SRCC PLCC KRCC\nCNNIQA [24] Original 0.8717 0.8829 0.7318 0.8169 0.7756 0.6411 0.6789 0.6750 0.5154\nSGH 0.9360 0.9731 0.8040 0.8906 0.8880 0.7300 0.9104 0.9281 0.7525\nJCSAN [16] Original 0.8839 0.8696 0.7462 0.8416 0.8320 0.6607 0.7083 0.6925 0.5353\nSGH 0.9336 0.9749 0.7961 0.8816 0.8776 0.7217 0.9178 0.9294 0.7627\nResNet50 [25] Original 0.8868 0.9203 0.7240 0.9110 0.9046 0.7533 0.8294 0.8536 0.6591\nSGH 0.9530 0.9749 0.8443 0.9432 0.9273 0.8216 0.9268 0.9358 0.7710\nDeepSRQ [10] Original 0.9118 0.9428 0.7540 0.7378 0.7358 0.5436 0.7567 0.7961 0.5828\nSGH 0.9560 0.9729 0.8580 0.7861 0.7628 0.6330 0.9137 0.9256 0.7756\nHyperIQA [21] Original 0.9085 0.9365 0.7541 0.8931 0.8904 0.7378 0.7901 0.8093 0.6264\nSGH 0.9470 0.9745 0.8239 0.9356 0.9338 0.7967 0.9246 0.9385 0.7681\nAverage Improvement - 0.0526 0.0636 0.0832 0.0473 0.0502 0.0733 0.1660 0.1662 0.1822\nTABLE IV\nCROSS -DATASET PERFORMANCE RESULTS OF SCALE GUIDED HYPERNETWORK (SGH) FRAMEWORK .",
+    "token_count": 254,
+    "char_count": 1019
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c013",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "Base Model Framework Waterloo QADS CVIU\nCVIU QADS CVIU Waterloo Waterloo QADS\nCNNIQA [24] Original 0.6478 0.6484 0.6852 0.8552 0.8176 0.7078\nSGH 0.8885 0.8253 0.8792 0.8991 0.9314 0.7620\nJCSAN [16] Original 0.6326 0.6323 0.7044 0.8613 0.7783 0.6179\nSGH 0.9007 0.7927 0.8809 0.9342 0.9401 0.7702\nResNet50 [25] Original 0.6545 0.5539 0.8121 0.8666 0.9175 0.8474\nSGH 0.8963 0.7574 0.8884 0.9156 0.9296 0.7976\nDeepSRQ [10] Original 0.7065 0.6686 0.7064 0.8410 0.7390 0.4953\nSGH 0.8932 0.7478 0.8914 0.9395 0.9386 0.7478\nHyperIQA [21] Original 0.7127 0.6863 0.7581 0.8702 0.8557 0.8364\nSGH 0.8758 0.7773 0.8607 0.9189 0.9363 0.7921\nAverage Improvement - 0.2201 0.1422 0.1469 0.0626 0.1136 0.0730\nThe activation function of the first four FC layers is Sigmoid,\nwhile that of the last FC layer is the identity function. The\nhypernetwork generates parameters for five FC layers through\nfive independent modules, where each module uses one FC\nlayer for weights prediction and another for bias prediction. Next, we detail the training and test protocols as follows.",
+    "token_count": 263,
+    "char_count": 1055
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c014",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "Next, we detail the training and test protocols as follows. We randomly split each dataset into the training set and the\ntest set with a ratio of 8:2 while ensuring the image with the\nsame content or the same SR method falls into the same set. The partitioning and evaluation process is repeated 10 times\nfor a fair comparison while considering the computational\ncomplexity, and the average result is reported as the final\nperformance. At each step of one training epoch, we randomly\ncrop 64 224×224 patches from SR images and feed them into\nIQA models, whose parameters are optimized through Adam\nwith a learning rate of 1e-4. The training procedure lasts for\n50 epochs. At the stage of evaluation, we first split the input\nSR image into 224× 224 patches with a stride of 64, then\npredict the quality score of all patches, and finally rate the\ninput image the average quality score of all patches. C. Effectiveness of Scale Guided Hypernetwork Framework\nTo verify the effectiveness of the proposed framework,\nwe apply it to five representative blind IQA methods: CNNIQA [24], ResNet50 [25] based IQA metric, HyperIQA [21],\nJCSAN [16], and DeepSRQ [10].",
+    "token_count": 288,
+    "char_count": 1153
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c015",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "The single-dataset and crossdataset comparisons between the SGH-enhanced IQA metrics\nwith the original ones are presented in Table III and Table IV,\nrespectively. From these two tables, several interesting findings\ncan be discovered:\nFirst, although five IQA models largely differ in network architectures, their single-dataset and cross-dataset performance\nare significantly boosted by the proposed SGH framework. For\nexample, the average single-dataset improvement of SRCC,\nJOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 6\n2 4 6 8\nSubjective MOS\n7Predicted MOS\nSRCC = 0.7004\nScale Factor\n2 4 6 8\nSubjective MOS\n8Predicted MOS\nSRCC = 0.9301\nScale Factor\n(a) (b)\nFig. 4. The scatter plots of predicted MOSs against subjective MOSs on the CVIU dataset. (a) ResNet50; (b) The SGH-enhanced ResNet50.",
+    "token_count": 201,
+    "char_count": 807
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c016",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "4. The scatter plots of predicted MOSs against subjective MOSs on the CVIU dataset. (a) ResNet50; (b) The SGH-enhanced ResNet50. 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19\nNeuron ID\n8 Scale Factor\n0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19\nNeuron ID\n8 Scale Factor\n0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19\nNeuron ID\n8 Scale Factor\n(a)\n2 3 4 5 6 8\nScale Factor\n8 Scale Factor\n0.980\n0.985\n0.990\n0.995\n1.000\n2 3 4 5 6 8\nScale Factor\n8 Scale Factor\n0.86\n0.88\n0.90\n0.92\n0.94\n0.96\n0.98\n1.00\n2 3 4 5 6 8\nScale Factor\n8 Scale Factor\n0.960\n0.965\n0.970\n0.975\n0.980\n0.985\n0.990\n0.995\n1.000\n(b)\nFig. 5. Generated weights of the first three FC layers and their correlation maps. (a) The first 20 neurons of weights. (b) The cosine similarity between\ngenerated weights. PLCC, and KRCC on the CVIU dataset are 0.1660, 0.1662,\nand 0.1822, respectively. This validates the effectiveness of\nthe proposed SGH framework and also reminds us of the\nimportance of scale information to the task of NR SR IQA. Second, the hypernetwork-based IQA metric, i.e., HyperIQA, fails to perform well across different datasets.",
+    "token_count": 278,
+    "char_count": 1115
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c017",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "Second, the hypernetwork-based IQA metric, i.e., HyperIQA, fails to perform well across different datasets. For\ninstance, although HyperIQA achieves better performance\non the Waterloo dataset, it is inferior to ResNet50 on the\nQADS and CVIU datasets. This indicates that the marriage\nof hypernetwork and blind SR IQA requires task-specific\nknowledge. To meet that requirement, we propose a scale\nguided hypernetwork framework. Third, the average single-dataset improvement on the CVIU\ndataset is higher than that on the other two datasets. This\nis because the statistical effect of scale factors on the visual\nquality of SR images is more significant on the CVIU dataset,\nwhich is derived from Table I where the p-value of the CVIU\ndataset is lower than that of the other two datasets. Fourth, the performance of cross-dataset evaluation on the\nCVIU dataset is higher than that on the other two datasets. This is because the CVIU dataset contains more images and\nmore scale factors (as shown in Table II). D. Deep Dive to the Scale Guided Hypernetwok\nTo better understand the performance gains obtained by\nSGH, we plot predicted MOS against subjective MOS in\nFig. 4.",
+    "token_count": 291,
+    "char_count": 1166
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c018",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "D. Deep Dive to the Scale Guided Hypernetwok\nTo better understand the performance gains obtained by\nSGH, we plot predicted MOS against subjective MOS in\nFig. 4. As shown, a large portion of SGH’s SRCC gains come\nfrom its ability to limit errors in assigning higher quality scores\nto SR images with larger scale factors. This is thanks to the\nscale priori, that is, SR images with lower scale factors are\ngenerally more visually pleasing than those with high scale\nfactors. In order to understand how the scale priori helps us assess\nimage quality, we visualize the generated weights of FC\nlayers used in quality predictions and the similarity between\nweights of different scale factors in Fig. 5. As shown, several\ninteresting findings can be discovered:\nFirst, for different scale factors, the generated weights vary. This indicates that our framework adopts a unique evaluation\nrule for each scale factor. Whereas for traditional IQA models,\nthe evaluation rule is fixed for all scale factors. Second, weights generated for different scale factors are\nhighly correlated. This indicates that our framework slightly\nadjusts the evaluation rule for SR images according to the\nJOURNAL OF LATEX CLASS FILES, VOL.",
+    "token_count": 302,
+    "char_count": 1209
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c019",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "This indicates that our framework slightly\nadjusts the evaluation rule for SR images according to the\nJOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 7\nTABLE V\nCOMPARISON WITH STATE -OF-THE -ART FR AND NR IQA MODELS . T HE BEST PERFORMANCE RESULTS ARE BOLD .",
+    "token_count": 67,
+    "char_count": 268
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c020",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "14, NO. 8, AUGUST 2021 7\nTABLE V\nCOMPARISON WITH STATE -OF-THE -ART FR AND NR IQA MODELS . T HE BEST PERFORMANCE RESULTS ARE BOLD . Type Metric Waterloo QADS CVIU\nSRCC PLCC KRCC SRCC PLCC KRCC SRCC PLCC KRCC\nFR IQA\nPSNR 0.8163 0.8107 0.6442 0.4229 0.4052 0.3246 0.6157 0.6220 0.4464\nSSIM [27] 0.9085 0.9143 0.7567 0.5864 0.5836 0.4452 0.6339 0.6372 0.4551\nMS-SSIM [28] 0.9023 0.8952 0.7510 0.7402 0.6988 0.5657 0.7800 0.7406 0.5897\nIW-SSIM [29] 0.9161 0.9318 0.7641 0.8144 0.7814 0.6385 0.8443 0.8144 0.6605\nFSIM [30] 0.9063 0.9216 0.7461 0.6882 0.6779 0.5200 0.7559 0.7550 0.5647\nGMSD [31] 0.8797 0.9080 0.7047 0.7791 0.7656 0.6044 0.8480 0.8535 0.6677\nMS-GMSD [32] 0.8808 0.9131 0.7065 0.7457 0.7322 0.5684 0.8384 0.8430 0.6554\nVSI [33] 0.8752 0.8911 0.7065 0.5964 0.5770 0.4415 0.7341 0.7208 0.5519\nMDSI [34] 0.9090 0.9157 0.7518 0.6345 0.6294 0.4686 0.7848 0.7904 0.5952\nHaarPSI [35] 0.8998 0.9387 0.7467 0.8028 0.8131 0.6287 0.8386 0.8506 0.6558\nSFSN [36] 0.8937 0.9193 0.7185 0.7980 0.7725 0.6258 0.8398 0.8109 0.6543\nNR IQA\nBRISQUE [37] 0.8297 0.8390 0.6283 0.4925 0.5060 0.3543 0.6676 0.7033 0.4984\nDBCNN [38] 0.8969 0.9146 0.7174 0.8921 0.8959 0.7331 0.8154 0.8510 0.6359\nCNNIQA [24] 0.8717 0.8829 0.7318 0.8169 0.7756 0.6411 0.6789 0.6750 0.5154\nJCSAN [16] 0.8839 0.8696 0.7462 0.8416 0.8320 0.6607 0.7083 0.6925 0.5353\nDeepSRQ [10] 0.9118 0.9428 0.7540 0.7378 0.7358 0.5436 0.7567 0.7961 0.5828\nResNet50 [25] 0.8868 0.9203 0.7240 0.9110 0.9046 0.7533 0.8294 0.8536 0.6591\nHyperIQA [21] 0.9085 0.9365 0.7541 0.8931 0.8904 0.7378 0.7901 0.8093 0.6264\nResNet50 + SGH 0.9530 0.9749 0.8443 0.9432 0.9273 0.8216 0.9268 0.9358 0.7710\nDBCNN CNNIQA JCSAN DeepSRQ HyperIQA ResNet50ResNet50+SGH\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1.0SRCC\nDBCNN CNNIQA JCSAN DeepSRQ HyperIQA ResNet50ResNet50+SGH\n0.6\n0.7\n0.8\n0.9\n1.0SRCC\nDBCNN CNNIQA JCSAN DeepSRQ HyperIQA ResNet50ResNet50+SGH\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1.0SRCC\n(a) (b) (c)\nFig.",
+    "token_count": 479,
+    "char_count": 1917
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c021",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "6. Box plot of SRCC distributions of IQA models over 10 trials. (a) On the Waterloo dataset; (b) On the QADS dataset; (c) On the CVIU dataset.\nscale factor. This makes sense because the appearance of the\nimage does not decline dramatically as the scale factor slightly\nincreases. E. Comparison with the State-of-the-art\nTo demonstrate the advantage of the SGH-enhanced IQA\nmodel, we make a comparison with state-of-the-art IQA\nmethods including 11 FR IQA models [27]–[36] and 7 NR\nIQA approaches [10], [16], [21], [24], [25], [37], [38]. The\nperformance of works [27]–[35], [37] is calculated by the\nimage quality assessment toolbox named PyIQA [39], while\nthat of the remaining methods are based on their source codes. The mean results over 10 trials are reported in Table V. From this table, we observe that the SGH-enhanced ResNet50\nachieves the best performance across three SR IQA datasets. This verifies the advantage of the proposed SGH framework. To further analyze the performance stability of the SGH enhanced IQA model, we plot SRCC distributions of IQA models\nover 10 trials. As shown in Fig.",
+    "token_count": 276,
+    "char_count": 1104
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c022",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "To further analyze the performance stability of the SGH enhanced IQA model, we plot SRCC distributions of IQA models\nover 10 trials. As shown in Fig. 6, the performance results of\nthe SGH-enhanced IQA model are more concentrated than\nthose of other 6 NR IQA models, indicating that the SGHenhanced IQA model has better stability. F . Ablation study\nTo verify the superiority of the proposed scale guided hypernetwork (SGH) framework in exploiting scale information, we\ncompare it with the fusion-based framework where we directly\nconcatenate scale information and image features for quality\nscore prediction. The results of the single-dataset comparison\nare presented in Table VI. According to Table VI, we have the\nfollowing findings:\nFirst, the fusion-based framework significantly improves the\nperformance of five IQA models, which indicates that direct\nconcatenation is a simple yet efficient approach to using scale\ninformation to guide the task of SR IQA. Second, the average improvement brought by the proposed\nSGH is higher than that brought by the fusion-based framework. This also occurs in Table VII, which reports the results\nof the cross-dataset comparison.",
+    "token_count": 292,
+    "char_count": 1170
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c023",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "This also occurs in Table VII, which reports the results\nof the cross-dataset comparison. Therefore, we can conclude\nthat the proposed SGH framework is a more effective way\nto exploit scale information to guide blind SR IQA than the\nfusion-based one. JOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 8\nTABLE VI\nSINGLE -DATASET COMPARISON WITH THE FUSION -BASED FRAMEWORK WHERE WE PREDICT THE QUALITY SCORE BASED ON THE FUSED\nREPRESENTATION OF SCALE FACTOR AND IMAGE FEATURES .",
+    "token_count": 121,
+    "char_count": 485
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c024",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "14, NO. 8, AUGUST 2021 8\nTABLE VI\nSINGLE -DATASET COMPARISON WITH THE FUSION -BASED FRAMEWORK WHERE WE PREDICT THE QUALITY SCORE BASED ON THE FUSED\nREPRESENTATION OF SCALE FACTOR AND IMAGE FEATURES . Base Model Framework Waterloo QADS CVIU\nSRCC PLCC KRCC SRCC PLCC KRCC SRCC PLCC KRCC\nCNNIQA [24]\nOriginal 0.8717 0.8829 0.7318 0.8169 0.7756 0.6411 0.6789 0.6750 0.5154\nFusion-based 0.9321 0.9698 0.7921 0.8927 0.8818 0.7268 0.8994 0.9115 0.7366\nSGH 0.9260 0.9719 0.7815 0.8711 0.8674 0.6990 0.8936 0.9120 0.7274\nJCSAN [16]\nOriginal 0.8839 0.8696 0.7462 0.8416 0.8320 0.6607 0.7083 0.6925 0.5353\nFusion-based 0.9311 0.9593 0.7986 0.8927 0.8875 0.7245 0.9077 0.9198 0.7454\nSGH 0.9275 0.9735 0.7842 0.8983 0.8946 0.7384 0.9092 0.9264 0.7468\nResNet50 [25]\nOriginal 0.8868 0.9203 0.7240 0.9110 0.9046 0.7533 0.8294 0.8536 0.6591\nFusion-based 0.8992 0.9326 0.7502 0.9308 0.9238 0.7894 0.8522 0.8758 0.6816\nSGH 0.9067 0.9671 0.7383 0.9445 0.9416 0.8164 0.9013 0.9216 0.7386\nDeepSRQ [10]\nOriginal 0.9118 0.9428 0.7540 0.7378 0.7358 0.5436 0.7567 0.7961 0.5828\nFusion-based 0.9129 0.9534 0.7591 0.8431 0.8365 0.6647 0.9140 0.9113 0.7519\nSGH 0.9180 0.9734 0.7593 0.8673 0.8600 0.6901 0.9158 0.9328 0.7597\nHyperIQA [21]\nOriginal 0.9085 0.9365 0.7541 0.8931 0.8904 0.7378 0.7901 0.8093 0.6264\nFusion-based 0.8927 0.9347 0.7423 0.9027 0.8878 0.7471 0.7941 0.8129 0.6308\nSGH 0.9247 0.9674 0.7763 0.9351 0.9305 0.8013 0.9121 0.9262 0.7533\nAverage Improvement Fusion-based 0.0211 0.0395 0.0264 0.0523 0.0558 0.0632 0.1208 0.1210 0.1255\nSGH 0.0526 0.0636 0.0832 0.0473 0.0502 0.0733 0.1660 0.1662 0.1822\nTABLE VII\nCROSS -DATASET COMPARISON WITH THE FUSION -BASED FRAMEWORK .",
+    "token_count": 414,
+    "char_count": 1657
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c025",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "Base Model Framework Waterloo QADS CVIU\nCVIU QADS CVIU Waterloo Waterloo QADS\nCNNIQA [24]\nOriginal 0.6478 0.6484 0.6852 0.8552 0.8176 0.7078\nFusion-based 0.9000 0.8295 0.8605 0.9253 0.9379 0.7621\nSGH 0.8885 0.8253 0.8792 0.8991 0.9314 0.7620\nJCSAN [16]\nOriginal 0.6326 0.6323 0.7044 0.8613 0.7783 0.6179\nFusion-based 0.9014 0.8200 0.8698 0.9277 0.9355 0.7760\nSGH 0.9007 0.7927 0.8809 0.9342 0.9401 0.7702\nResNet50 [25]\nOriginal 0.6545 0.5539 0.8121 0.8666 0.9175 0.8474\nFusion-based 0.6663 0.6293 0.8408 0.8923 0.9016 0.8392\nSGH 0.8963 0.7574 0.8884 0.9156 0.9296 0.7976\nDeepSRQ [10]\nOriginal 0.7065 0.6686 0.7064 0.8410 0.7390 0.4953\nFusion-based 0.8800 0.7225 0.8700 0.9059 0.9201 0.7100\nSGH 0.8932 0.7478 0.8914 0.9395 0.9386 0.7478\nHyperIQA [21]\nOriginal 0.7127 0.6863 0.7581 0.8702 0.8557 0.8364\nFusion-based 0.6876 0.6540 0.7973 0.8682 0.8737 0.8340\nSGH 0.8758 0.7773 0.8607 0.9189 0.9363 0.7921\nAverage Improvement Fusion-based 0.1362 0.0932 0.1144 0.0450 0.0921 0.0833\nSGH 0.2201 0.1422 0.1469 0.0626 0.1136 0.0730\nVI.",
+    "token_count": 256,
+    "char_count": 1026
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_results_finally_the_paper_is_con_c026",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "results. Finally, the paper is concluded in Section VI.",
+    "page": 2,
+    "text": "C ONCLUSION\nIn this paper, we first reveal that the scale factor can be\nused to guide the task of blind SR IQA through qualitative\nand quantitative experiments, and then propose a scale guided\nhypernetwork framework. In the proposed framework, we\nevaluate SR image quality in a scale-adaptive manner, where\nthe evaluation rule is generated based on the scale factor of the\nSR image. Experimental results demonstrate that the proposed\nframework not only improves the performance of existing IQA\nmetrics but also enhances their generalization abilities. ACKNOWLEDGMENTS\nThanks to Dr. Jiachen Gu for providing computing resources.",
+    "token_count": 156,
+    "char_count": 627
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_references_c000",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 8,
+    "text": "[1] A. Pais, J. D’Souza, and R. Reddy, “Super-resolution video generation\nalgorithm for surveillance applications,” The Imaging Science Journal ,\nvol. 62, no. 3, pp. 139–148, 2014.\n[2] M. Dasari, A. Bhattacharya, S. Vargas, P. Sahu, A. Balasubramanian,\nand S. R. Das, “Streaming 360-degree videos using super-resolution,” in\nIEEE INFOCOM 2020-IEEE Conference on Computer Communications . IEEE, 2020, pp. 1977–1986.\n[3] H. Amirpour, M. Ghanbari, and C. Timmerer, “Deepstream: Video\nstreaming enhancements using compressed deep neural networks,” IEEE\nTransactions on Circuits and Systems for Video Technology , 2022. JOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2021 9\n[4] D. C. Garcia, C. Dorea, and R. L. de Queiroz, “Super resolution\nfor multiview images using depth information,” IEEE Transactions on\nCircuits and Systems for Video Technology , vol. 22, no. 9, pp. 1249–\n1256, 2012.\n[5] Z. Jin, T. Tillo, C. Yao, J. Xiao, and Y . Zhao, “Virtual-view-assisted\nvideo super-resolution and enhancement,” IEEE transactions on circuits\nand Systems for Video Technology , vol. 26, no. 3, pp. 467–478, 2015.\n[6] C. Dong, C. C. Loy, K. He, and X.",
+    "token_count": 286,
+    "char_count": 1147
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_references_c001",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 8,
+    "text": "Zhao, “Virtual-view-assisted\nvideo super-resolution and enhancement,” IEEE transactions on circuits\nand Systems for Video Technology , vol. 26, no. 3, pp. 467–478, 2015.\n[6] C. Dong, C. C. Loy, K. He, and X. Tang, “Learning a deep convolutional\nnetwork for image super-resolution,” in Computer Vision–ECCV 2014:\n13th European Conference, Zurich, Switzerland, September 6-12, 2014,\nProceedings, Part IV 13 . Springer, 2014, pp. 184–199.\n[7] J. Yang, J. Wright, T. S. Huang, and Y . Ma, “Image super-resolution via\nsparse representation,” IEEE transactions on image processing , vol. 19,\nno. 11, pp. 2861–2873, 2010.\n[8] H. Yeganeh, M. Rostami, and Z. Wang, “Objective quality assessment of\ninterpolated natural images,” IEEE Transactions on Image Processing ,\nvol. 24, no. 11, pp. 4651–4663, 2015.\n[9] C. Ma, C.-Y . Yang, X. Yang, and M.-H. Yang, “Learning a no-reference\nquality metric for single-image super-resolution,” Computer Vision and\nImage Understanding, vol. 158, pp. 1–16, 2017.\n[10] W. Zhou, Q. Jiang, Y . Wang, Z. Chen, and W. Li, “Blind quality assessment for image superresolution using deep two-stream convolutional\nnetworks,” Information Sciences , vol. 528, pp. 205–218, 2020.\n[11] M. Greeshma and V .",
+    "token_count": 304,
+    "char_count": 1218
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_references_c002",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 8,
+    "text": "Wang, Z. Chen, and W. Li, “Blind quality assessment for image superresolution using deep two-stream convolutional\nnetworks,” Information Sciences , vol. 528, pp. 205–218, 2020.\n[11] M. Greeshma and V . Bindu, “Super-resolution quality criterion (srqc):\na super-resolution image quality assessment metric,” Multimedia Tools\nand Applications , vol. 79, no. 47-48, pp. 35 125–35 146, 2020.\n[12] B. Bare, K. Li, B. Yan, B. Feng, and C. Yao, “A deep learning based\nno-reference image quality assessment model for single-image superresolution,” in 2018 IEEE International Conference on Acoustics, Speech\nand Signal Processing (ICASSP) . IEEE, 2018, pp. 1223–1227.\n[13] W. Lu, W. Sun, X. Min, W. Zhu, Q. Zhou, J. He, Q. Wang, Z. Zhang,\nT. Wang, and G. Zhai, “Deep neural network for blind visual quality\nassessment of 4k content,” IEEE Transactions on Broadcasting , 2022.\n[14] T. Zhao, Y . Lin, Y . Xu, W. Chen, and Z. Wang, “Learning-based\nquality assessment for image super-resolution,” IEEE Transactions on\nMultimedia, vol. 24, pp. 3570–3581, 2021.\n[15] Y . Liu, Q. Jia, S. Wang, S. Ma, and W.",
+    "token_count": 272,
+    "char_count": 1090
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_references_c003",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 8,
+    "text": "Lin, Y . Xu, W. Chen, and Z. Wang, “Learning-based\nquality assessment for image super-resolution,” IEEE Transactions on\nMultimedia, vol. 24, pp. 3570–3581, 2021.\n[15] Y . Liu, Q. Jia, S. Wang, S. Ma, and W. Gao, “Textural-structural joint\nlearning for no-reference super-resolution image quality assessment,”\narXiv preprint arXiv:2205.13847 , 2022.\n[16] T. Zhang, K. Zhang, C. Xiao, Z. Xiong, and J. Lu, “Joint channelspatial attention network for super-resolution image quality assessment,”\nApplied Intelligence , pp. 1–15, 2022.\n[17] Y . Fang, C. Zhang, W. Yang, J. Liu, and Z. Guo, “Blind visual quality\nassessment for image super-resolution by convolutional neural network,”\nMultimedia Tools and Applications , vol. 77, pp. 29 829–29 846, 2018.\n[18] D. Ha, A. Dai, and Q. V . Le, “Hypernetworks,” arXiv preprint\narXiv:1609.09106, 2016.\n[19] C. Zhang, M. Ren, and R. Urtasun, “Graph hypernetworks for neural\narchitecture search,” arXiv preprint arXiv:1810.05749 , 2018.\n[20] H. Zhu, H. Wang, and Z. Chen, “Minl: Micro-images based neural\nrepresentation for light fields,” arXiv preprint arXiv:2209.08277 , 2022.\n[21] S. Su, Q. Yan, Y . Zhu, C. Zhang, X. Ge, J. Sun, and Y .",
+    "token_count": 294,
+    "char_count": 1176
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_references_c004",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 8,
+    "text": "Zhu, H. Wang, and Z. Chen, “Minl: Micro-images based neural\nrepresentation for light fields,” arXiv preprint arXiv:2209.08277 , 2022.\n[21] S. Su, Q. Yan, Y . Zhu, C. Zhang, X. Ge, J. Sun, and Y . Zhang,\n“Blindly assess image quality in the wild guided by a self-adaptive hyper\nnetwork,” in Proceedings of the IEEE/CVF Conference on Computer\nVision and Pattern Recognition , 2020, pp. 3667–3676.\n[22] F. Zhou, R. Yao, B. Liu, and G. Qiu, “Visual quality assessment for\nsuper-resolved images: Database and method,” IEEE Transactions on\nImage Processing, vol. 28, no. 7, pp. 3528–3541, 2019.\n[23] R. A. Alexander and D. M. Govern, “A new and simpler approximation for anova under variance heterogeneity,” Journal of Educational\nStatistics, vol. 19, no. 2, pp. 91–101, 1994.\n[24] L. Kang, P. Ye, Y . Li, and D. Doermann, “Convolutional neural networks\nfor no-reference image quality assessment,” in Proceedings of the IEEE\nconference on computer vision and pattern recognition , 2014, pp. 1733–\n1740.\n[25] K. He, X. Zhang, S. Ren, and J. Sun, “Deep residual learning for image\nrecognition,” in Proceedings of the IEEE conference on computer vision\nand pattern recognition , 2016, pp. 770–778.\n[26] P. Virtanen, R. Gommers, T. E. Oliphant, M.",
+    "token_count": 309,
+    "char_count": 1237
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_references_c005",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 8,
+    "text": "Sun, “Deep residual learning for image\nrecognition,” in Proceedings of the IEEE conference on computer vision\nand pattern recognition , 2016, pp. 770–778.\n[26] P. Virtanen, R. Gommers, T. E. Oliphant, M. Haberland, T. Reddy,\nD. Cournapeau, E. Burovski, P. Peterson, W. Weckesser, J. Bright et al.,\n“Scipy 1.0: fundamental algorithms for scientific computing in python,”\nNature methods, vol. 17, no. 3, pp. 261–272, 2020.\n[27] Z. Wang, A. C. Bovik, H. R. Sheikh, and E. P. Simoncelli, “Image\nquality assessment: from error visibility to structural similarity,” IEEE\ntransactions on image processing , vol. 13, no. 4, pp. 600–612, 2004.\n[28] Z. Wang, E. P. Simoncelli, and A. C. Bovik, “Multiscale structural\nsimilarity for image quality assessment,” in The Thrity-Seventh Asilomar\nConference on Signals, Systems & Computers, 2003 , vol. 2. Ieee, 2003,\npp. 1398–1402.\n[29] Z. Wang and Q. Li, “Information content weighting for perceptual image\nquality assessment,” IEEE Transactions on image processing , vol. 20,\nno. 5, pp. 1185–1198, 2010.\n[30] L. Zhang, L. Zhang, X. Mou, and D. Zhang, “Fsim: A feature similarity\nindex for image quality assessment,” IEEE transactions on Image\nProcessing, vol. 20, no. 8, pp. 2378–2386, 2011.\n[31] W. Xue, L.",
+    "token_count": 310,
+    "char_count": 1243
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_references_c006",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 8,
+    "text": "Zhang, L. Zhang, X. Mou, and D. Zhang, “Fsim: A feature similarity\nindex for image quality assessment,” IEEE transactions on Image\nProcessing, vol. 20, no. 8, pp. 2378–2386, 2011.\n[31] W. Xue, L. Zhang, X. Mou, and A. C. Bovik, “Gradient magnitude\nsimilarity deviation: A highly efficient perceptual image quality index,”\nIEEE transactions on image processing , vol. 23, no. 2, pp. 684–695,\n2013.\n[32] B. Zhang, P. V . Sander, and A. Bermak, “Gradient magnitude similarity\ndeviation on multiple scales for color image quality assessment,” in\n2017 IEEE International Conference on Acoustics, Speech and Signal\nProcessing (ICASSP). IEEE, 2017, pp. 1253–1257.\n[33] L. Zhang, Y . Shen, and H. Li, “Vsi: A visual saliency-induced index\nfor perceptual image quality assessment,” IEEE Transactions on Image\nprocessing, vol. 23, no. 10, pp. 4270–4281, 2014.\n[34] H. Z. Nafchi, A. Shahkolaei, R. Hedjam, and M. Cheriet, “Mean\ndeviation similarity index: Efficient and reliable full-reference image\nquality evaluator,” Ieee Access , vol. 4, pp. 5579–5590, 2016.\n[35] R. Reisenhofer, S. Bosse, G. Kutyniok, and T. Wiegand, “A haar waveletbased perceptual similarity index for image quality assessment,” Signal\nProcessing: Image Communication , vol.",
+    "token_count": 309,
+    "char_count": 1237
+  },
+  {
+    "chunk_id": "scale_guided_hypernetwork_for_bl_references_c007",
+    "paper_id": "scale_guided_hypernetwork_for_bl",
+    "paper_title": "Scale Guided Hypernetwork for Blind Super-Resolution Image Quality Assessment",
+    "section_title": "REFERENCES",
+    "page": 8,
+    "text": "5579–5590, 2016.\n[35] R. Reisenhofer, S. Bosse, G. Kutyniok, and T. Wiegand, “A haar waveletbased perceptual similarity index for image quality assessment,” Signal\nProcessing: Image Communication , vol. 61, pp. 33–43, 2018.\n[36] W. Zhou and Z. Wang, “Quality assessment of image super-resolution:\nBalancing deterministic and statistical fidelity,” in Proceedings of the\n30th ACM International Conference on Multimedia , 2022, pp. 934–942.\n[37] A. Mittal, A. K. Moorthy, and A. C. Bovik, “No-reference image\nquality assessment in the spatial domain,” IEEE Transactions on image\nprocessing, vol. 21, no. 12, pp. 4695–4708, 2012.\n[38] W. Zhang, K. Ma, J. Yan, D. Deng, and Z. Wang, “Blind image quality\nassessment using a deep bilinear convolutional neural network,” IEEE\nTransactions on Circuits and Systems for Video Technology , vol. 30,\nno. 1, pp. 36–47, 2018.\n[39] C. Chen and J. Mo, “IQA-PyTorch: Pytorch toolbox for image\nquality assessment,” [Online]. Available: https://github.com/chaofengc/\nIQA-PyTorch, 2022.",
+    "token_count": 254,
+    "char_count": 1016
+  },
+  {
+    "chunk_id": "iqa_survey_c000",
+    "paper_id": "iqa_taxonomy_survey",
+    "paper_title": "Comprehensive Survey on Image Quality Assessment",
+    "section_title": "Introduction & Taxonomy",
+    "page": 1,
+    "text": "Image Quality Assessment (IQA) algorithms are categorized into three paradigms based on reference availability: (1) Full-Reference (FR) IQA, where algorithms compare distorted images directly against a pristine ground-truth reference image (e.g. SSIM, MS-SSIM, VIF, FSIM, LPIPS); (2) Reduced-Reference (RR) IQA, where only partial statistical representations or feature descriptions of the reference image are available; and (3) No-Reference (NR) or blind IQA, where algorithms evaluate image quality solely from the distorted image itself without any access to the original pristine reference (e.g. BRISQUE, NIQE, PIQE, MUSIQ, CLIP-IQA).",
+    "token_count": 119,
+    "char_count": 601
+  },
+  {
+    "chunk_id": "brisque_method_c001",
+    "paper_id": "brisque_spatial_domain",
+    "paper_title": "No-Reference Image Quality Assessment in the Spatial Domain (BRISQUE)",
+    "section_title": "Natural Scene Statistics Model",
+    "page": 2,
+    "text": "BRISQUE calculates Mean Subtracted Contrast Normalized (MSCN) coefficients across the image: I_hat(i,j) = (I(i,j) - mu(i,j)) / (sigma(i,j) + 1). In natural uncorrupted images, MSCN coefficients follow a unit Gaussian distribution. For distorted images, the distribution deviates. BRISQUE fits an asymmetric generalized Gaussian distribution (AGGD) to MSCN coefficients and pairwise adjacent products (horizontal, vertical, diagonal), and uses the fitted distribution parameters as features for a support vector regressor (SVR).",
+    "token_count": 125,
+    "char_count": 651
+  },
+  {
+    "chunk_id": "lpips_intro_c001",
+    "paper_id": "lpips_perceptual_metric",
+    "paper_title": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric (LPIPS)",
+    "section_title": "Introduction & Deep Feature Distance",
+    "page": 2,
+    "text": "LPIPS investigates the hypothesis that feature representations learned by deep neural networks trained on high-level visual tasks (such as ImageNet classification via VGG, AlexNet, or SqueezeNet) act as an emergent perceptual distance metric that correlates well with human perceptual judgments, even across diverse architectures and without explicit supervision for perceptual similarity.",
+    "token_count": 88,
+    "char_count": 482
+  },
+  {
+    "chunk_id": "clipiqa_method_c001",
+    "paper_id": "clip_iqa_open_world",
+    "paper_title": "Exploring CLIP for Solving Open-world Image Quality Assessment (CLIP-IQA)",
+    "section_title": "Methodology: Visual Prompting and Antonym Pairs",
+    "page": 3,
+    "text": "CLIP-IQA utilizes paired antonym text prompts describing quality attributes (such as 'Good image' vs 'Bad image', or 'Sharp image' vs 'Blurry image'), passes them through the CLIP text encoder, and calculates cosine similarity with image patch embeddings from the vision encoder, computing quality via softmax probabilities.",
+    "token_count": 84,
+    "char_count": 420
+  },
+  {
+    "chunk_id": "musiq_arch_c001",
+    "paper_id": "musiq_multiscale_transformer",
+    "paper_title": "MUSIQ: Multi-scale Image Quality Transformer",
+    "section_title": "Multi-Scale Tokenization & Architecture",
+    "page": 2,
+    "text": "Standard deep networks resize or crop images to fixed small resolutions (e.g., 224x224), which destroys high-frequency details, sharpness, and composition artifacts. MUSIQ accommodates full-resolution images at arbitrary aspect ratios by sampling patches at multiple scales and processing multi-scale patch representations using a Transformer encoder with positional embeddings.",
+    "token_count": 79,
+    "char_count": 435
+  },
+  {
+    "chunk_id": "ssim_struct_c001",
+    "paper_id": "ssim_structural_similarity",
+    "paper_title": "Image Quality Assessment: From Error Visibility to Structural Similarity (SSIM)",
+    "section_title": "Structural Similarity Index",
+    "page": 2,
+    "text": "SSIM measures image quality based on three separate components: Luminance comparison l(x,y) evaluating mean intensity, Contrast comparison c(x,y) evaluating standard deviation, and Structural correlation s(x,y) evaluating normalized cross-correlation, combined multiplicatively.",
+    "token_count": 62,
+    "char_count": 331
+  },
+  {
+    "chunk_id": "ssim_mse_c002",
+    "paper_id": "ssim_structural_similarity",
+    "paper_title": "Image Quality Assessment: From Error Visibility to Structural Similarity (SSIM)",
+    "section_title": "Limitations of MSE and Error Visibility",
+    "page": 1,
+    "text": "MSE and PSNR compute pixel-wise differences independently without considering human visual system (HVS) characteristics such as spatial frequency sensitivity, contrast masking, structural coherence, or perceptual geometry. Two images with identical MSE can have drastically different perceived visual fidelity depending on whether the distortion is high-frequency noise, a constant luminance shift, or blur.",
+    "token_count": 83,
+    "char_count": 465
+  },
+  {
+    "chunk_id": "niqe_mvg_c001",
+    "paper_id": "niqe_blind_quality_analyzer",
+    "paper_title": "Making a 'Completely Blind' Image Quality Analyzer (NIQE)",
+    "section_title": "Pristine MVG Model and Distance Metric",
+    "page": 2,
+    "text": "While BRISQUE is trained using a supervised regression model on both pristine and distorted images with human Mean Opinion Scores (MOS), NIQE is completely unsupervised, constructed solely using a multivariate Gaussian (MVG) model of natural pristine images. Distorted images are scored by computing the distance (Bhattacharyya or Mahalanobis) between their spatial NSS features and the pristine MVG model.",
+    "token_count": 91,
+    "char_count": 469
+  },
+  {
+    "chunk_id": "topiq_form_c001",
+    "paper_id": "topiq_top_down_iqa",
+    "paper_title": "TOPIQ: A Top-Down Approach to Image Quality Assessment",
+    "section_title": "Top-Down Formulation",
+    "page": 2,
+    "text": "TOPIQ applies top-down and bottom-up attention mechanisms using a vision Transformer, extracting both semantic task-level features and low-level distortion tokens to jointly assess perceptual distortion and semantic contextual degradation.",
+    "token_count": 45,
+    "char_count": 277
+  },
+  {
+    "chunk_id": "eval_criteria_c001",
+    "paper_id": "iqa_standardized_benchmarks",
+    "paper_title": "Standardized Evaluation of IQA Algorithms",
+    "section_title": "Performance Evaluation Criteria",
+    "page": 3,
+    "text": "The primary criteria are Spearman's Rank Order Correlation Coefficient (SRCC) and Kendall's Rank Correlation Coefficient (KRCC) to measure prediction monotonicity, and Pearson Linear Correlation Coefficient (PLCC) and Root Mean Squared Error (RMSE) after non-linear logistic regression mapping to evaluate prediction accuracy against subjective Mean Opinion Scores (MOS).",
+    "token_count": 78,
+    "char_count": 435
+  },
+  {
+    "chunk_id": "dists_form_c001",
+    "paper_id": "dists_structure_texture",
+    "paper_title": "Image Quality Assessment: Unifying Structure and Texture Similarity (DISTS)",
+    "section_title": "DISTS Formulation",
+    "page": 2,
+    "text": "DISTS evaluates both structural similarity and texture similarity using intermediate feature maps from a deep convolutional neural network (VGG-16), calculating separate correlation coefficients for spatial structure and feature channel statistics to remain sensitive to structural degradation while tolerant to imperceptible texture variations.",
+    "token_count": 66,
+    "char_count": 401
+  },
+  {
+    "chunk_id": "hyperiqa_arch_c001",
+    "paper_id": "hyperiqa_wild_assessment",
+    "paper_title": "Blindly Assess Image Quality in the Wild Guided by a Self-Adaptive Hyper Network (HyperIQA)",
+    "section_title": "Hypernetwork Architecture",
+    "page": 3,
+    "text": "HyperIQA uses a hypernetwork architecture split into a perception rule generator and a quality prediction network. The rule generator analyzes high-level semantic content to dynamically generate the adaptive weights for the lower-level quality prediction network.",
+    "token_count": 52,
+    "char_count": 303
+  },
+  {
+    "chunk_id": "benchmarks_dist_c001",
+    "paper_id": "koniq_dataset_paper",
+    "paper_title": "KonIQ-10k: An Ecologically Valid Database for Deep Learning of Blind Image Quality Assessment",
+    "section_title": "Synthetic vs Authentic Distortions",
+    "page": 2,
+    "text": "Synthetic distortion datasets artificially apply uniform synthetic distortions (such as simulated additive Gaussian noise, JPEG compression, or Gaussian blur) at controlled severity levels to clean pristine images (e.g. TID2013, KADID-10k). Authentic in-the-wild datasets collect real photographs captured by consumers containing complex, compound, heterogeneous distortions like camera sensor noise, poor lighting, hand-shake blur, and compression (e.g. KonIQ-10k, SPAQ).",
+    "token_count": 94,
+    "char_count": 527
+  },
+  {
+    "chunk_id": "msssim_synth_c001",
+    "paper_id": "msssim_paper",
+    "paper_title": "Multi-Scale Structural Similarity for Image Quality Assessment",
+    "section_title": "Multi-Scale Synthesis",
+    "page": 2,
+    "text": "MS-SSIM iteratively downsamples the reference and distorted images through a low-pass filtering and decimation pyramid, computing contrast and structure comparisons at multiple scales while calculating luminance comparison only at the coarsest scale, weighting each scale according to human visual sensitivity at varying viewing distances.",
+    "token_count": 67,
+    "char_count": 407
+  },
+  {
+    "chunk_id": "vif_info_c001",
+    "paper_id": "vif_information_fidelity",
+    "paper_title": "Image Information and Visual Quality (VIF)",
+    "section_title": "Information Theoretic Framework",
+    "page": 2,
+    "text": "VIF models natural scenes in the wavelet domain using Gaussian Scale Mixtures (GSM) and models the human visual system distortion as an additive Gaussian noise channel. It quantifies quality as the ratio of mutual information extracted from the distorted image by the visual brain to the mutual information extracted from the reference image.",
+    "token_count": 76,
+    "char_count": 412
+  },
+  {
+    "chunk_id": "fsim_pc_c001",
+    "paper_id": "fsim_feature_sim",
+    "paper_title": "FSIM: A Feature Similarity Index for Image Quality Assessment",
+    "section_title": "Phase Congruency and Gradient Magnitude",
+    "page": 2,
+    "text": "FSIM computes image similarity based on two primary human visual system features: Phase Congruency (PC), which captures salient invariant edge and feature structures without illumination sensitivity, and Image Gradient Magnitude (GM), which reflects luminance contrast intensity.",
+    "token_count": 58,
+    "char_count": 328
+  },
+  {
+    "chunk_id": "piqe_block_c001",
+    "paper_id": "piqe_perception_eval",
+    "paper_title": "Perception based Image Quality Evaluator (PIQE)",
+    "section_title": "Block Classification and Quality Pooling",
+    "page": 2,
+    "text": "PIQE partitions an image into non-overlapping 16x16 blocks, computes MSCN coefficients for each block, classifies blocks as perceptually distorted or high-spatial-activity based on local variance and block activity thresholds, and pools distortion scores exclusively across distorted blocks without needing any trained regression model.",
+    "token_count": 69,
+    "char_count": 395
+  },
+  {
+    "chunk_id": "eval_logistic_c001",
+    "paper_id": "vqeg_test_plan",
+    "paper_title": "Video Quality Experts Group (VQEG) Test Plan",
+    "section_title": "Nonlinear Mapping Function",
+    "page": 2,
+    "text": "Subjective Mean Opinion Scores (MOS) and objective algorithmic quality scores often exhibit a non-linear relationship due to human visual saturation and scale boundaries. A monotonic 5-parameter logistic curve maps objective scores to subjective ratings to linearize the predictions before calculating PLCC and RMSE.",
+    "token_count": 62,
+    "char_count": 353
+  },
+  {
+    "chunk_id": "pieapp_pref_c001",
+    "paper_id": "pieapp_pairwise_pref",
+    "paper_title": "PieAPP: Perceptual Image-Error Assessment through Pairwise Preference",
+    "section_title": "Pairwise Preference Formulation",
+    "page": 2,
+    "text": "PieAPP is a deep learning-based FR-IQA metric trained on pairwise human preference comparisons rather than absolute MOS scores. It predicts the probability that a human observer would perceive one distorted image patch as being closer to the reference image than another distorted patch.",
+    "token_count": 60,
+    "char_count": 331
+  },
+  {
+    "chunk_id": "aigc_quality_c001",
+    "paper_id": "aigciqa_content_eval",
+    "paper_title": "AIGCIQA: Quality Assessment of AI Generated Content",
+    "section_title": "AIGC Quality Dimensions: Technical, Semantic, Aesthetic",
+    "page": 2,
+    "text": "AI-generated images (from diffusion models or GANs) frequently lack natural pristine references (necessitating NR-IQA), may have high spatial sharpness and realistic local texture yet suffer from severe unnatural semantic distortions (e.g. anatomical deformities, physically impossible lighting, or floating objects), and require evaluating prompt alignment alongside visual aesthetics.",
+    "token_count": 71,
+    "char_count": 444
+  },
+  {
+    "chunk_id": "live_dataset_c001",
+    "paper_id": "live_database_paper",
+    "paper_title": "A Statistical Evaluation of Recent Full Reference Image Quality Assessment Algorithms (LIVE Database)",
+    "section_title": "Database Description and Calibration",
+    "page": 2,
+    "text": "Developed by the Laboratory for Image and Video Engineering (LIVE) at UT Austin, the LIVE IQA database was the pioneering public benchmark dataset featuring 29 pristine images subject to 5 synthetic distortion categories (JPEG, JPEG2000, white noise, Gaussian blur, and simulated fast-fading Rayleigh channel) with subjective differential mean opinion scores (DMOS).",
+    "token_count": 78,
+    "char_count": 427
+  },
+  {
+    "chunk_id": "kadid_dataset_c001",
+    "paper_id": "kadid10k_dataset_paper",
+    "paper_title": "KADID-10k: A Large-scale Artificially Deteriorated Image Quality Database",
+    "section_title": "Dataset Scale and Distribution",
+    "page": 2,
+    "text": "KADID-10k contains 10,125 distorted images derived from 81 pristine source images across 25 distortion types and 5 degradation levels, crowdsourced with over 30,400 subjective ratings, making it one of the largest synthetic IQA benchmarks compared to LIVE (982 images) and TID2013 (3,000 images).",
+    "token_count": 66,
+    "char_count": 348
+  },
+  {
+    "chunk_id": "lpips_pooling_c001",
+    "paper_id": "lpips_perceptual_metric",
+    "paper_title": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric (LPIPS)",
+    "section_title": "Network Architecture & Spatial Average",
+    "page": 3,
+    "text": "In LPIPS, intermediate channel activations are unit-normalized across channel dimensions, scaled by learned layer weights w_l, and then spatially averaged across image height and width (L2 distance per pixel averaged over H x W) to yield the final scalar distance.",
+    "token_count": 57,
+    "char_count": 312
+  },
+  {
+    "chunk_id": "mos_dmos_c001",
+    "paper_id": "itur_bt500_standards",
+    "paper_title": "Methodology for the Subjective Assessment of the Quality of Television Pictures (ITU-R BT.500)",
+    "section_title": "MOS and DMOS Definitions",
+    "page": 1,
+    "text": "Mean Opinion Score (MOS) is the direct arithmetic average of subjective raw quality ratings given by human observers to an image. Differential Mean Opinion Score (DMOS) calculates the difference between an observer's rating of the reference image and their rating of the distorted image, compensating for individual subjective observer scoring biases and anchoring scales.",
+    "token_count": 77,
+    "char_count": 432
+  },
+  {
+    "chunk_id": "cnn_patch_c001",
+    "paper_id": "cnn_no_ref_iqa",
+    "paper_title": "Convolutional Neural Networks for No-Reference Image Quality Assessment",
+    "section_title": "Patch Extraction and Aggregation",
+    "page": 2,
+    "text": "Patch-based CNN models extract multiple local sub-patches from an image to capture fine-grained pixel distortions (noise, blur, compression), and employ learned attention pooling or regression aggregation to weight informative patches more heavily than homogeneous, low-information areas.",
+    "token_count": 55,
+    "char_count": 328
+  }
+]
